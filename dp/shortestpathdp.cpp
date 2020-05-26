@@ -12,7 +12,7 @@ int mem[MAX_N];//memoization array
 
 int f(int u,int n)
 {
-    if(u==n-1)
+    if(u==n)
     {
         return 0;
     }
@@ -24,7 +24,7 @@ int f(int u,int n)
 
     int ans = INF;
 
-    for(int v = 0;v<n;v++)
+    for(int v = 1;v<=n;v++)
     {
         if(w[u][v] != INF)
         {
@@ -50,14 +50,14 @@ int main()
     }
     
     n = 5;
-    w[0][1]=2;
-    w[0][3]=1;
-    w[1][2]=1;
-    w[1][4]=9;
-    w[3][1]=3;
-    w[2][4]=3;
+    w[1][2]=2;
+    w[1][4]=1;
+    w[2][3]=1;
+    w[2][5]=9;
+    w[4][2]=3;
+    w[3][5]=3;
 
-    int res = f(0,n);
+    int res = f(2,5);
 
     cout<<res<<endl;
    
