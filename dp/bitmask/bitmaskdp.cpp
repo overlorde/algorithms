@@ -12,7 +12,7 @@ bool turnOn()
 
 int f()
 {
-    //soborno bari 
+    
 }
 int main()
 {
