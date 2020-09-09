@@ -1,9 +1,12 @@
+//travelling salesman problem using bitmasking
+//author:Farhan Saif
+
 #include <bits/stdc++.h>
 using namespace std;
 
 
 #define inf 10900
-#define MAX 1000
+#define MAX 100
 
 int w[MAX][MAX];
 int mem[MAX][1<<MAX];
@@ -52,12 +55,14 @@ int main()
     int edges;
     cin>>edges;
 
-    while(edges--)
+    while(edges !=0 )
     {
         int i,j;
         cin>>i>>j;
         int cost;
         cin>>cost;
+        w[i][j]=cost;
+        edges--;
     }
 
     int result = f(0,1);
