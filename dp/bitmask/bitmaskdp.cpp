@@ -2,7 +2,7 @@
 using namespace std;
 
 
-#define inf 10900000
+#define inf 10900
 #define MAX 1000
 
 int w[MAX][MAX];
@@ -45,7 +45,23 @@ int f(int i,int mask)
 
 int main()
 {
-    memset();
-    memset();
+    memset(w,inf,sizeof(w));
+    memset(mem,-1,sizeof(mem));
+
+    cin>>n;
+    int edges;
+    cin>>edges;
+
+    while(edges--)
+    {
+        int i,j;
+        cin>>i>>j;
+        int cost;
+        cin>>cost;
+    }
+
+    int result = f(0,1);
+
+    cout<<result;
 }
 
