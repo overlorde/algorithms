@@ -3,7 +3,7 @@ using namespace std;
 
 
 #define inf 10900000
-#define MAX 100
+#define MAX 1000
 
 int w[MAX][MAX];
 int mem[MAX][1<<MAX];
@@ -30,3 +30,4 @@ int main()
 {
 
 }
+
