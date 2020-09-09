@@ -39,6 +39,7 @@ int f(int i,int mask)
             ans = min(ans,res);
         }
     }
+    return mem[i][mask]=ans;
 }
 
 
