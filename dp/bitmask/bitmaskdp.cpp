@@ -7,13 +7,11 @@ using namespace std;
 
 int w[MAX][MAX];
 int mem[MAX][1<<MAX];
+int n;
 
-
-
-
-bool isTurnOn()
+bool isTurnOn(int num,int pos)
 {
-
+    return num | (1<<pos);
 }
 bool turnOn()
 {
