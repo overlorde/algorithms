@@ -9,7 +9,7 @@ using namespace std;
 #define MAX 100
 
 int w[100][100];
-int mem[100][1<<100];
+int mem[100][100];
 int n;
 
 bool isTurnOn(int num,int pos)
@@ -55,10 +55,17 @@ int main()
             w[i][j]=inf;
         }
     }
-    memset(mem,-1,sizeof(mem));
-    cout<<w[3][4]<<endl;
+
+    for(int j=0;j<100;j++)
+    {
+        for(int i=0;i<100 ;i++)
+        {
+            mem[j][i]=-1;
+        }
+    }
+   /* cout<<w[3][4]<<endl;
     cout<<mem[4][3]<<endl;
-    /*
+    */
 
     cin>>n;
     int edges;
@@ -77,6 +84,6 @@ int main()
     int result = f(0,1);
 
     cout<<result;
-    */
+    
 }
 
