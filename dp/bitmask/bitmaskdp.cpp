@@ -23,6 +23,7 @@ int turnOn(int num,int pos)
 
 int f(int i,int mask)
 {
+    cout<<"entered "<<i<<" "<<mask<<endl;
     if(mask == (1<<n)-1)
     {
         return w[i][0];
@@ -79,9 +80,9 @@ int main()
         cin>>w[i][j];
         c++;
     }
-
+    cout<<"tested positive 1"<<endl;
     int result = f(0,1);
-
+    cout<<"tested positive 2"<<endl;
     cout<<result;
     
 }
