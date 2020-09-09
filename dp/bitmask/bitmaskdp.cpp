@@ -8,8 +8,8 @@ using namespace std;
 #define inf 10900
 #define MAX 100
 
-int w[MAX][MAX];
-int mem[MAX][1<<MAX];
+int w[100][100];
+int mem[100][1<<100];
 int n;
 
 bool isTurnOn(int num,int pos)
@@ -48,8 +48,17 @@ int f(int i,int mask)
 
 int main()
 {
-    memset(w,inf,sizeof(w));
+    for(int i=0;i<100;i++)
+    {
+        for(int j=0;j<100;j++)
+        {
+            w[i][j]=inf;
+        }
+    }
     memset(mem,-1,sizeof(mem));
+    cout<<w[3][4]<<endl;
+    cout<<mem[4][3]<<endl;
+    /*
 
     cin>>n;
     int edges;
@@ -68,5 +77,6 @@ int main()
     int result = f(0,1);
 
     cout<<result;
+    */
 }
 
