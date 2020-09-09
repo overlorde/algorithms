@@ -14,11 +14,11 @@ int n;
 
 bool isTurnOn(int num,int pos)
 {
-    return num & (1<<pos);
+    return (bool)(num & (1<<pos));
 }
 int turnOn(int num,int pos)
 {
-    return num | (1<<pos);
+    return (num | (1<<pos));
 }
 
 int f(int i,int mask)
@@ -70,15 +70,14 @@ int main()
     cin>>n;
     int edges;
     cin>>edges;
-
-    while(edges !=0 )
+    int c=0;
+    while(c<edges)
     {
         int i,j;
         cin>>i>>j;
         int cost;
-        cin>>cost;
-        w[i][j]=cost;
-        edges--;
+        cin>>w[i][j];
+        c++;
     }
 
     int result = f(0,1);
