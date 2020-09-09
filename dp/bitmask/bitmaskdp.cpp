@@ -9,8 +9,8 @@ using namespace std;
 #define MAX 100
 
 int w[100][100];
-int mem[100][100];
-int n;
+int mem[100][1000];
+int n=0;
 
 bool isTurnOn(int num,int pos)
 {
@@ -58,7 +58,7 @@ int main()
 
     for(int j=0;j<100;j++)
     {
-        for(int i=0;i<100 ;i++)
+        for(int i=0;i<1000 ;i++)
         {
             mem[j][i]=-1;
         }
@@ -75,7 +75,7 @@ int main()
     {
         int i,j;
         cin>>i>>j;
-        int cost;
+        
         cin>>w[i][j];
         c++;
     }
