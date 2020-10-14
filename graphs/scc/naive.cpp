@@ -5,12 +5,11 @@ using namespace std;
 
 int main()
 {
-    vector<int> m;
+    stack<int> stk;
 
-    int n;
-    cin>>n;
-
-    m.clear();
-    m.assign(n+1,1);
-    cout<<m[0];
+    for(int i=1;i<=10;i++)
+    {
+        stk.push(i);
+    }
+    cout<<stk.front()<<endl;
 }
