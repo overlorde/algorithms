@@ -11,5 +11,5 @@ int main()
     {
         stk.push(i);
     }
-    cout<<stk.front()<<endl;
+    cout<<stk.top()<<endl;
 }

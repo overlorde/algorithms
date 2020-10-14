@@ -14,7 +14,7 @@ void reverse()
 {
     for(int i=0;i<m;i++)
     {
-        for(auto v : edges[i])
+        for(auto v : Edges[i])
         {
             R[v].push_back(i);
         }
@@ -56,14 +56,28 @@ void DFS2(int u,int mark)
 
 void findSCC()
 {
-    for(auto u : R)
+    for(int i=0;i<n;i++){
+    for(auto u : R[i])
     {
         if(color[u]==WHITE)
         {
             DFS(u);
         }
     }
+    }
     reverse();
+
+    while(!stk.empty())
+    {
+        int u = stk.top();
+        stk.pop();
+
+        if(vis[u]==0)
+        {
+            mark++;
+            DFS2(u,mark);
+        }
+    }
 }
 
 
