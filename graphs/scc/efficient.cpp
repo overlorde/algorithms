@@ -4,7 +4,9 @@ using namespace std;
 #define MAXX 10000
 #define GREY -1
 #define WHITE -2
+
 vector<int> Edges[MAXX],color,vis;
+vector<int> components[MAXX];
 
 stack<int> stk;
 
@@ -22,8 +24,13 @@ void DFS(int u)
 
     stk.push(u);
     return;
-    
+
 }
+
+
+void DFS2()
+
+
 
 int main()
 {
@@ -41,6 +48,7 @@ int main()
         for(int i=0;i<n;i++)
         {
             Edges[i].clear();
+            components[i].clear();
         }
         for(int i=0;i<m;i++)
         {
