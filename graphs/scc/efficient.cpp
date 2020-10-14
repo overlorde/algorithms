@@ -2,13 +2,27 @@
 using namespace std;
 
 #define MAXX 10000
-
+#define GREY -1
+#define WHITE -2
 vector<int> Edges[MAXX],color,vis;
 
+stack<int> stk;
 
 void DFS(int u)
 {
-    color[u]=-1;
+    color[u]=GREY;
+
+    for(auto v : Edges)
+    {
+        if(color[v]==WHITE)
+        {
+            DFS(v);
+        }
+    }
+
+    stk.push(u);
+    return;
+    
 }
 
 int main()
