@@ -12,7 +12,7 @@ int f(int i,int marker)
 {
     if(mem[i][marker] != -1)
     {
-        return mem[u][marker];
+        return mem[i][marker];
     }
 
     int ans = marker;
@@ -26,7 +26,7 @@ int f(int i,int marker)
 
         if(marker == 0)
         {
-            ans += f(x,1)
+            ans += f(x,1);
         }
         else{
             ans += 1+min(f(x,0),f(x,1));
