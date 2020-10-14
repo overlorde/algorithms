@@ -9,7 +9,7 @@ vector<int> Edges[MAXX],color,vis,R[MAXX];
 vector<int> components[MAXX];
 
 stack<int> stk;
-int m=0,n=0;
+int m=0,n=0,mark =0;
 void reverse()
 {
     for(int i=0;i<m;i++)
@@ -44,11 +44,27 @@ void DFS2(int u,int mark)
     components[mark].push_back(u);
     vis[u]=1;
 
-    for(auto v : )
-
-
+    for(auto v : R[u])
+    {
+        if(!vis[v])
+        {
+            DFS2(v,mark);
+        }
+    }
+    return;
 }
 
+void findSCC()
+{
+    for(auto u : R)
+    {
+        if(color[u]==WHITE)
+        {
+            DFS(u);
+        }
+    }
+    reverse();
+}
 
 
 int main()
