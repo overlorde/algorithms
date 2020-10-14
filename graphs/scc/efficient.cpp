@@ -25,7 +25,7 @@ void DFS(int u)
 {
     color[u]=GREY;
 
-    for(auto v : Edges)
+    for(auto v : Edges[u])
     {
         if(color[v]==WHITE)
         {
@@ -43,6 +43,8 @@ void DFS2(int u,int mark)
 {
     components[mark].push_back(u);
     vis[u]=1;
+
+    for(auto v : )
 
 
 }
