@@ -9,10 +9,16 @@ vector<int> Edges[MAXX],color,vis,R[MAXX];
 vector<int> components[MAXX];
 
 stack<int> stk;
-
+int m=0,n=0;
 void reverse()
 {
-
+    for(int i=0;i<m;i++)
+    {
+        for(auto v : edges[i])
+        {
+            R[v].push_back(i);
+        }
+    }
 }
 
 void DFS(int u)
@@ -35,7 +41,7 @@ void DFS(int u)
 
 void DFS2(int u,int mark)
 {
-    components[mark].add(u);
+    components[mark].push_back(u);
     vis[u]=1;
 
 
@@ -50,7 +56,7 @@ int main()
 
     while(T--)
     {
-        int m,n;
+        
         cin>>n>>m;
         color.clear();vis.clear();
 
