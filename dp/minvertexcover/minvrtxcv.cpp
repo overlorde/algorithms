@@ -10,13 +10,23 @@ vector<int> edges[MAXX];
 
 int f(int i,int marker)
 {
-    if(mem[u][marker] != -1)
+    if(mem[i][marker] != -1)
     {
         return mem[u][marker];
     }
 
     int ans = marker;
-    
+
+    for(auto x : edges[i])
+    {
+        if(marker == 0)
+        {
+            ans += f(x,1)
+        }
+        else{
+            ans += 1+min(f(x,0),f(x,1));
+        }
+    }
 }
 
 
