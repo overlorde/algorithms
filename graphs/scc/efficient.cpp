@@ -5,10 +5,15 @@ using namespace std;
 #define GREY -1
 #define WHITE -2
 
-vector<int> Edges[MAXX],color,vis;
+vector<int> Edges[MAXX],color,vis,R[MAXX];
 vector<int> components[MAXX];
 
 stack<int> stk;
+
+void reverse()
+{
+
+}
 
 void DFS(int u)
 {
@@ -28,7 +33,13 @@ void DFS(int u)
 }
 
 
-void DFS2()
+void DFS2(int u,int mark)
+{
+    components[mark].add(u);
+    vis[u]=1;
+
+
+}
 
 
 
@@ -49,6 +60,7 @@ int main()
         {
             Edges[i].clear();
             components[i].clear();
+            R[i].clear();
         }
         for(int i=0;i<m;i++)
         {
