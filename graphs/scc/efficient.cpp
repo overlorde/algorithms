@@ -56,7 +56,7 @@ void DFS2(int u,int mark)
 
 void findSCC()
 {
-    for(int i=0;i<n;i++){
+    for(int i=1;i<=n;i++){
     for(auto u : R[i])
     {
         if(color[u]==WHITE)
@@ -94,13 +94,13 @@ int main()
 
         color.assign(n+1,-2);vis.assign(n+1,0);
 
-        for(int i=0;i<n;i++)
+        for(int i=0;i<=n;i++)
         {
             Edges[i].clear();
             components[i].clear();
             R[i].clear();
         }
-        for(int i=0;i<m;i++)
+        for(int i=1;i<=m;i++)
         {
 
             int u,v;
@@ -110,5 +110,14 @@ int main()
         }
 
         findSCC();
+
+        for(auto b :components)
+        {
+            for(auto x: b)
+            {
+                cout<<x<<" ";
+            }
+            cout<<endl;
+        }
     }
 }
