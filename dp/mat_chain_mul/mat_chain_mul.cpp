@@ -74,7 +74,7 @@ int main()
             mats.push_back({r,c});
         }
         int ans = f(1,n);
-        cout<<"Cout #"<<h-t<<ans<<endl;
+        cout<<"Count #"<<h-t<<":"<<ans<<endl;
 
     }   
 }
