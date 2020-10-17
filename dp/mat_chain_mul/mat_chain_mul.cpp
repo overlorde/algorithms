@@ -63,6 +63,13 @@ int main()
     while(t--)
     {
         mats.clear();
-        
+        cin>>n;
+
+        for(int i=1;i<=n;i++)
+        {
+            int r,c;
+            cin>>r>>c;
+            mats.push_back({r,c});
+        }
     }   
 }
