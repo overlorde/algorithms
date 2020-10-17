@@ -63,6 +63,6 @@ int main()
     while(t--)
     {
         mats.clear();
-        mats.assign({0,0},n+1);
+        
     }   
 }
