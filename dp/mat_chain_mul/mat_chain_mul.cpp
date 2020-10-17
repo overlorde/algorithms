@@ -58,5 +58,11 @@ int f(int i,int j)
 
 int main()
 {
-    
+    cin>>t;
+
+    while(t--)
+    {
+        mats.clear();
+        mats.assign({0,0},n+1);
+    }   
 }
