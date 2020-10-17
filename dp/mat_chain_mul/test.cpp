@@ -3,8 +3,8 @@ using namespace std;
 
 //#define MAXN 1<<30
 
-int n=0;t=0;
-
+int n=0,t=0;
+int mem[MAXN][MAXN];
 
 
 struct Matrix{
@@ -23,5 +23,13 @@ vector<Matrix> mats;
 
 int main()
 {
-    
+    cin>>t;
+
+    while(t--)
+    {
+        cin>>n;
+
+        mats.clear();
+
+    }
 }
