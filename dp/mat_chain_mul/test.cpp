@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//#define MAXN 1<<30
+#define MAXN 1000
 
 int n=0,t=0;
 int mem[MAXN][MAXN];
@@ -27,9 +27,13 @@ int main()
 
     while(t--)
     {
-        cin>>n;
+        
 
         mats.clear();
+
+        memset(mem,-1,sizeof(mem));
+
+        cout<<mem[5][5]<<endl;
 
     }
 }

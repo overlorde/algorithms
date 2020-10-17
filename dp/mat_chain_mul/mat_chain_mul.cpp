@@ -3,7 +3,7 @@ using namespace std;
 
 
 #define MAX_N   100
-#define INF     1<<30
+#define INF     10000
 #define EMPTY_VALUE -1
 
 
