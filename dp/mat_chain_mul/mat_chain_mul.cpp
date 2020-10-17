@@ -2,8 +2,12 @@
 using namespace std;
 
 
-#define MAX_N 100
-#define INF 1<<30
+#define MAX_N   100
+#define INF     1<<30
+
+
+
+int n=0,t=0;
 
 int mem[MAX_N][MAX_N];
 
