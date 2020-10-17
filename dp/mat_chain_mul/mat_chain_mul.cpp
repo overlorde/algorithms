@@ -11,7 +11,7 @@ struct Matrix{
     int row,col;
 
     
-    Matrix(int _row,int _col
+    Matrix(int _row,int _col)
     {
         row = _row;
         col = _col;
@@ -35,6 +35,7 @@ int f(int i,int j)
     {
         return mem[i][j];
     }
+    
 }
 
 
