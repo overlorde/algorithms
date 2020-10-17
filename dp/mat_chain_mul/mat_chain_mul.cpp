@@ -73,8 +73,8 @@ int main()
             cin>>r>>c;
             mats.push_back({r,c});
         }
-        int ans = f(1,n);
-        cout<<"Count #"<<h-t<<":"<<ans<<endl;
+        int ans = f(0,n-1);
+        cout<<"Count #"<<h-t<<": "<<ans<<endl;
 
     }   
 }
