@@ -1,33 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+#define EMPTY_VALUE -1
 
 int mem[1000][1000];
 
-
-int f(int i,int j,string &s,string &w)
+int f(int i,int j,string &S,string &W)
 {
-    
-    if(i==s.size() || j == w.size())
-    {
-        return 0;
-    }
-    if(mem[i][j] != -1)
+    if(i == S.size() || j == W.size()) return 0;
+
+    if(mem[i][j] != EMPTY_VALUE)
     {
         return mem[i][j];
     }
-    int ans =0;
 
-    if(s[i]==w[i])
+    int ans = 0;
+
+    if(S[i] == W[i])
     {
-        ans = 1 + f(i+1,j+1,s,w);
-    }else{
-        int val1 = f(i+1,j,s,w);
-        int val2 = f(i,j+1,s,w);
+        ans = 1 + f(i+1,j+1,S,W);
+    }
+    else{
+        int val1 = f(i+1,j,S,W);
+        int val2 = f(i,j+1,S,W);
 
         ans = max(val1,val2);
     }
-    mem[i][j]=ans;
+
+    mem[i][j] = ans;
+
     return mem[i][j];
 }
 
