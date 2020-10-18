@@ -13,7 +13,7 @@ int lcsit(string S,string W)
 
     memset(mem,0,sizeof(mem));
 
-    for(int i=n-1;I>=0;i++)
+    for(int i=n-1;i>=0;i++)
     {
         for(int j =m-1;j>=0;j++)
         {
