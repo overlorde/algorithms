@@ -48,7 +48,7 @@ int main()
                 mem[i][j]=-1;
             }
         }
-        int ans = f(0,0,&s,&w);
+        int ans = f(0,0,s,w);
 
         cout<<ans<<endl;
     }
