@@ -5,6 +5,24 @@ using namespace std;
 int mem[1000][1000];
 
 
+int f(int i,int j,string s,string w)
+{
+    if(i==s.size() || j == w.size())
+    {
+        return 0;
+    }
+    if(mem[i][j] != -1)
+    {
+        return mem[i][j];
+    }
+    int ans =0;
+
+    ans = max(f(i+1,j,s,w),f(i,j+1,s,w));
+
+    return mem[i][j]=ans;
+}
+
+
 
 int main()
 {
@@ -18,7 +36,7 @@ int main()
 
         memset(mem,-1,sizeof(mem));
 
-        int ans = lcs(s,w);
+        int ans = f(0,0,s,w);
 
         cout<<ans<<endl;
     }
