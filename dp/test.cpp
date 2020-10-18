@@ -5,7 +5,7 @@ using namespace std;
 int mem[1000][1000];
 
 
-int f(int i,int j,string s,string w)
+int f(int i,int j,string &s,string &w)
 {
     
     if(i==s.size() || j == w.size())
@@ -48,7 +48,7 @@ int main()
                 mem[i][j]=-1;
             }
         }
-        int ans = f(0,0,s,w);
+        int ans = f(0,0,&s,&w);
 
         cout<<ans<<endl;
     }
