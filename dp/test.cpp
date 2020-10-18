@@ -4,9 +4,9 @@ using namespace std;
 #define MAX_N 20
 #define EMPTY_VALUE -1
 
-int mem[100][100]
+int mem[100][100];
 
-int lcs(string S,string W)
+int lcsit(string S,string W)
 {
     int n = S.size();
     int m = W.size();
@@ -29,4 +29,14 @@ int lcs(string S,string W)
         }
     }
     return mem[0][0];
+}
+
+int main()
+{
+    string s,w;
+    cin>>s>>w;
+
+    int ans = lcsit(s,w);
+
+    cout<<ans<<endl;
 }
