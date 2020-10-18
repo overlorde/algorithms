@@ -1,31 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define EMPTY_VALUE -1
 
 int mem[1000][1000];
 
-int lcs(int i,int j, string &S, string &W) {   
-    if(i == S.size() || j == W.size()) return 0;
+
+int f(int i,int j,string &s,string &w)
+{
     
-    if(mem[i][j] != EMPTY_VALUE) {
+    if(i==s.size() || j == w.size())
+    {
+        return 0;
+    }
+    if(mem[i][j] != -1)
+    {
         return mem[i][j];
     }
-    
-    int ans=0;
-    if(S[i] == W[j]) {
-        ans = 1 + lcs(i + 1,j + 1, S, W);
+    int ans =0;
+
+    if(s[i]==w[i])
+    {
+        ans = 1 + f(i+1,j+1,s,w);
+    }else{
+        int val1 = f(i+1,j,s,w);
+        int val2 = f(i,j+1,s,w);
+
+        ans = max(val1,val2);
     }
-    else{
-        int val1 = lcs(i + 1, j, S, W);
-        int val2 = lcs(i,j + 1, S, W);
-        
-        ans=max(val1,val2);
-    }
-    
-    mem[i][j] = ans;
+    mem[i][j]=ans;
     return mem[i][j];
 }
+
 
 
 int main()
@@ -46,8 +51,30 @@ int main()
                 mem[i][j]=-1;
             }
         }
-        int ans = lcs(0,0,s,w);
+        int ans = f(0,0,s,w);
 
         cout<<ans<<endl;
     }
 }
+/*
+int lcs(int i,int j, string &S, string &W) {   
+    if(i == S.size() || j == W.size()) return 0;
+    
+    if(mem[i][j] != EMPTY_VALUE) {
+        return mem[i][j];
+    }
+    
+    int ans=0;
+    if(S[i] == W[j]) {
+        ans = 1 + lcs(i + 1,j + 1, S, W);
+    }
+    else{
+        int val1 = lcs(i + 1, j, S, W);
+        int val2 = lcs(i,j + 1, S, W);
+        
+        ans=max(val1,val2);
+    }
+    
+    mem[i][j] = ans;
+    return mem[i][j];
+}*/
