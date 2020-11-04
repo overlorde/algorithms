@@ -1,6 +1,6 @@
 /*
 ID: farhans4
-LANG: CPP
+LANG: C++
 PROG: ride
 */
 
