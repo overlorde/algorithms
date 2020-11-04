@@ -20,24 +20,17 @@ ll fibo(ll n)
         return mem[n];    
     }
 
-    return mem[n] = fibo(n-1)+fibo(n-2);
+    mem[n] = fibo(n-1)+fibo(n-2);
+    return mem[n];
 }
 
 int main()
 {
     for(ll i=0;i<10001;i++)v[i].clear();
     mem.clear();
-
+    mem.assign(900+10,-1);
     ll x = fibo(900);
 
-    for(ll i=1;i<100;i++)
-    {
-        cout<<"LEVEL "<<i<<": ";
-        for(ll j=1;j<=900;j++)
-        {
-            v[i].push_back(mem[j]%j);
-            cout<<v[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    cout<<x<<endl;
+ 
 }
