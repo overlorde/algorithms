@@ -5,8 +5,11 @@ PROG: ride
 */
 
 #include <bits/stdc++.h>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
 
-int carp(int *x)
+int carp(char *x)
 {
     int p = 1;
     int i;
