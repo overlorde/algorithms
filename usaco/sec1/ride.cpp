@@ -38,7 +38,7 @@ int main()
 
     if(carp(a)%47 == carp(b)%47)
     {
-        fprintf(out,"Go\n");
+        fprintf(out,"GO\n");
     }
     else{
         fprintf(out,"STAY\n");
