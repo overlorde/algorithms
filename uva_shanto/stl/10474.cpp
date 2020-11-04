@@ -17,10 +17,10 @@ ll fibo(ll n)
     }
     if(mem[n] != -1)
     {
-        return mem[u];    
+        return mem[n];    
     }
 
-    return mem[n] = fib(n-1)+fib(n-2);
+    return mem[n] = fibo(n-1)+fibo(n-2);
 }
 
 int main()
@@ -32,9 +32,12 @@ int main()
 
     for(ll i=1;i<100;i++)
     {
+        cout<<"LEVEL "<<i<<": ";
         for(ll j=1;j<=900;j++)
         {
             v[i].push_back(mem[j]%j);
+            cout<<v[i][j]<<" ";
         }
+        cout<<endl;
     }
 }
