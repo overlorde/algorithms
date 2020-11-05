@@ -5,18 +5,21 @@ PROG: friday
 */
 
 #include <bits/stdc++.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 using namespace std;
 
 int main()
 {
-    ifstream fin("friday.in");
+	FILE *in = fopen("friday.in", "r");
+	FILE *out= fopen("friday.out","w");
 
-    ofstream fout("friday.out");
-
-    int y;
-    fin>>y;
-
-    int i,a,g,c=2;
+	int y;
+	fscanf(in,"%d\n",&y);
+	fclose(in);
+	
+	int i,a,g,c=2;
 	int x[7];
 
 	for (i=0;i<7;i++)
@@ -94,4 +97,6 @@ int main()
 		else
 			fprintf(out,"%d\n",x[i]);
 	}
+	fclose(out);
+	exit(0);
 }
