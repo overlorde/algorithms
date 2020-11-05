@@ -4,12 +4,10 @@ LANG: C++
 PROG: friday
 */
 
-#include <bits/stdc++.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
 	FILE *in = fopen("friday.in", "r");
