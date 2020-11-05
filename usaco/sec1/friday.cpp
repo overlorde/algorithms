@@ -1,21 +1,22 @@
 /*
-ID: kadirce1
-LANG: C
+ID: farhans4
+LANG: C++
 PROG: friday
 */
-#include <stdio.h>
-#include <stdlib.h>
 
-void main()
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
 {
-	FILE *in = fopen("friday.in", "r");
-	FILE *out= fopen("friday.out","w");
+    ifstream fin("friday.in");
 
-	int y;
-	fscanf(in,"%d\n",&y);
-	fclose(in);
-	
-	int i,a,g,c=2;
+    ofstream fout("friday.out");
+
+    int y;
+    fin>>y;
+
+    int i,a,g,c=2;
 	int x[7];
 
 	for (i=0;i<7;i++)
@@ -93,6 +94,4 @@ void main()
 		else
 			fprintf(out,"%d\n",x[i]);
 	}
-	fclose(out);
-	exit(0);
 }
