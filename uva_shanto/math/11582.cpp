@@ -56,12 +56,22 @@ int main()
     v[0]=0;
     cout<<endl;
 
-    
-        for(ll j=0;j<=100;j++)
+    ll ind = 0;
+    for(ll j=0;j<=100;j++)
+    {
+        if(v[j]==0 && v[j+1]==1)
+        {
+            c++;
+        }
+        if(c>=2)
+        {
+            ind = j;
+            break;        
+        }
         cycle[6][j]=v[j];
-    
+    }
 
-    for(ll i=0;i<=100;i++)
+    for(ll i=0;i<ind;i++)
     {
         cout<<cycle[6][i]<<" ";
     }
