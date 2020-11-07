@@ -58,7 +58,7 @@ int main()
     for(ll i=1;i<=100;i++)
     {
         for(ll j=0;j<=1000;j++)
-        cycle[i].push_back(v[j]%i);
+        cycle[i][j]=v[j]%i;
     }
 
 
