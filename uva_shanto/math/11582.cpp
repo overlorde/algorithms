@@ -5,6 +5,7 @@ using namespace std;
 
 vector<ll> v;
 vector<ll> cycle[101];
+ll p;
 
 ll bigmod(ll a,ll b,ll M)
 {
@@ -32,7 +33,7 @@ ll fib(ll n)
         return v[n];
     }
 
-    return v[n]=fib(n-1)+fib(n-2);
+    return v[n]=(fib(n-1)+fib(n-2))%p;
 
 }
 
@@ -48,36 +49,21 @@ int main()
         cycle[i].clear();
         cycle[i].assign(1001,-1);
     }
-
-    ll x = fib(100);
+    p=6;
+    ll x = (fib(100))%p;
     
     v[1]=0;
     
     cout<<endl;
 
-    for(ll i=1;i<=6;i++)
-    {
+    
         for(ll j=1;j<=100;j++)
-        cycle[i][j]=v[j]%i;
-    }
+        cycle[6][j]=v[j];
+    
 
-    for(ll i=1;i<=6;i++)
+    for(ll i=1;i<=100;i++)
     {
-        cout<<"Cycle : "<<i<<" :"<<endl;
-
-        for(ll j=1;j<=100;j++)
-        cout<<cycle[i][j]<<" ";
-
-        cout<<endl;
-    }
-
-    cout<<"Main array:"<<endl;
-    int count=0;
-    for(auto x: v)
-    {
-        count++;
-        cout<<x<<" ";
-        if(count>=1)break;
+        cout<<cycle[6][i]<<" ";
     }
     
 
