@@ -57,6 +57,7 @@ int main()
     cout<<endl;
 
     ll ind = 0;
+    int c = 0;
     for(ll j=0;j<=100;j++)
     {
         if(v[j]==0 && v[j+1]==1)
@@ -75,7 +76,15 @@ int main()
     {
         cout<<cycle[6][i]<<" ";
     }
-    
+    ll a,b;
+    cout<<"A B :"<<endl;
+    cin>>a>>b;
 
-    cout<<endl;
+    cout<<"SIZE"<<endl;
+
+    ll sz = ind-1;
+
+    ll bgmd = bigmod(a,b,sz);
+
+    cout<<bgmd<<endl;
 }
