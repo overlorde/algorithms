@@ -52,16 +52,16 @@ int main()
     p=6;
     ll x = (fib(100))%p;
     
-    v[1]=0;
-    
+    v[1]=1;
+    v[0]=0;
     cout<<endl;
 
     
-        for(ll j=1;j<=100;j++)
+        for(ll j=0;j<=100;j++)
         cycle[6][j]=v[j];
     
 
-    for(ll i=1;i<=100;i++)
+    for(ll i=0;i<=100;i++)
     {
         cout<<cycle[6][i]<<" ";
     }
