@@ -40,7 +40,7 @@ int main()
 {
 
     v.clear();
-    v.assign(12,-1);
+    v.assign(101,-1);
     //cout<<v[0];
     
     for(ll i=0;i<=100;i++)
@@ -49,33 +49,37 @@ int main()
         cycle[i].assign(1001,-1);
     }
 
-    ll x = fib(10);
+    ll x = fib(100);
     
     v[1]=0;
-    for(ll i=1;i<=10;i++)
-    {
-        cout<<v[i]<<" ";
-
-    }
+    
     cout<<endl;
 
-    /*for(ll i=1;i<=100;i++)
+    for(ll i=1;i<=6;i++)
     {
-        for(ll j=0;j<=1000;j++)
+        for(ll j=1;j<=100;j++)
         cycle[i][j]=v[j]%i;
     }
 
-    for(ll i=1;i<=100;i++)
+    for(ll i=1;i<=6;i++)
     {
         cout<<"Cycle : "<<i<<" :"<<endl;
 
-        for(ll j=0;j<=1000;j++)
+        for(ll j=1;j<=100;j++)
         cout<<cycle[i][j]<<" ";
 
         cout<<endl;
     }
 
-    */
+    cout<<"Main array:"<<endl;
+    int count=0;
+    for(auto x: v)
+    {
+        count++;
+        cout<<x<<" ";
+        if(count>=1)break;
+    }
+    
 
     cout<<endl;
 }
