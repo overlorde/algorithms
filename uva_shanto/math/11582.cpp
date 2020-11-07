@@ -61,6 +61,17 @@ int main()
         cycle[i][j]=v[j]%i;
     }
 
+    for(ll i=1;i<=100;i++)
+    {
+        cout<<"Cycle : "<<i<<" :"<<endl;
+
+        for(ll j=0;j<=1000;j++)
+        cout<<cycle[i][j]<<" ";
+
+        cout<<endl;
+    }
+
+    
 
     cout<<endl;
 }
