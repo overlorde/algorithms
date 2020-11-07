@@ -4,7 +4,7 @@ using namespace std;
 #define ll long long
 
 vector<ll> v;
-
+vector<ll> cycle[101];
 
 ll fib(ll n)
 {
@@ -30,13 +30,15 @@ int main()
 {
 
     v.clear();
-    v.assign(100,-1);
+    v.assign(10001,-1);
     //cout<<v[0];
     
-    
-    for(ll i=1;i<10;i++)
+    for(ll i=0;i<=100;i++)
     {
-        cout<<fib(i)<<" ";
+        v[i].clear();
     }
+
+    ll x = fib(10000);
+    
     cout<<endl;
 }
