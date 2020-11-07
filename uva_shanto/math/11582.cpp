@@ -6,6 +6,19 @@ using namespace std;
 vector<ll> v;
 vector<ll> cycle[101];
 
+ll bigmod(ll a,ll b,ll M)
+{
+    if(b==0)return 1%M;
+
+    ll x = bigmod(a,b/2,M);
+
+    x = (x*x)%M;
+
+    if(b%2==1) x = (x*a)%M;
+
+    return x;
+}
+
 ll fib(ll n)
 {
     if(n <=1 )
@@ -35,10 +48,19 @@ int main()
     
     for(ll i=0;i<=100;i++)
     {
-        v[i].clear();
+        cycle[i].clear();
+        cycle[i].assign(1001,-1);
     }
 
     ll x = fib(10000);
     
+
+    for(ll i=1;i<=100;i++)
+    {
+        for(ll j=0;j<=1000;j++)
+        cycle[i].push_back(v[j]%i);
+    }
+
+
     cout<<endl;
 }
