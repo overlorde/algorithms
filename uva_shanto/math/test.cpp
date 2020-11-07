@@ -14,5 +14,5 @@ void func()
 int main()
 {
     v.clear();v.assign(100,-1);func();
-    
+    for(auto x: v)cout<<x<<endl;
 }

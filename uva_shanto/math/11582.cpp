@@ -21,11 +21,11 @@ ll bigmod(ll a,ll b,ll M)
 
 ll fib(ll n)
 {
-    if(n <=1 )
+    if(n == 0)
     {
         return 0;
     }
-    if(n == 2|| n == 3)
+    if(n == 1 || n == 2)
     {
         return 1;
     }
@@ -35,7 +35,7 @@ ll fib(ll n)
         return v[n];
     }
 
-    return v[n]=(fib(n-1)+fib(n-2);
+    return v[n]=fib(n-1)+fib(n-2);
 
 }
 
@@ -43,7 +43,7 @@ int main()
 {
 
     v.clear();
-   
+    v.assign(101,-1);
     //cout<<v[0];
     
     for(ll i=0;i<=100;i++)
@@ -52,9 +52,11 @@ int main()
         cycle[i].assign(1001,-1);
     }
 
-    ll x = fib(100);
-    
-    for(ll i=0;i<100;i++)
+    ll x = fib(10);
+    v[0]=0;
+    v[1]=0;
+
+    for(ll i=1;i<=10;i++)
     {
         cout<<v[i]<<" ";
 
