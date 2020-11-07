@@ -35,7 +35,7 @@ ll fib(ll n)
         return v[n];
     }
 
-    return v[n]=fib(n-1)+fib(n-2);
+    return v[n]=(fib(n-1)+fib(n-2);
 
 }
 
@@ -43,7 +43,7 @@ int main()
 {
 
     v.clear();
-    v.assign(10001,-1);
+   
     //cout<<v[0];
     
     for(ll i=0;i<=100;i++)
@@ -52,10 +52,16 @@ int main()
         cycle[i].assign(1001,-1);
     }
 
-    ll x = fib(10000);
+    ll x = fib(100);
     
+    for(ll i=0;i<100;i++)
+    {
+        cout<<v[i]<<" ";
 
-    for(ll i=1;i<=100;i++)
+    }
+    cout<<endl;
+
+    /*for(ll i=1;i<=100;i++)
     {
         for(ll j=0;j<=1000;j++)
         cycle[i][j]=v[j]%i;
@@ -71,7 +77,7 @@ int main()
         cout<<endl;
     }
 
-    
+    */
 
     cout<<endl;
 }
