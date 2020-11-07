@@ -86,5 +86,5 @@ int main()
 
     ll bgmd = bigmod(a,b,sz);
 
-    cout<<bgmd<<endl;
+    cout<<cycle[6][bgmd]<<endl;
 }
