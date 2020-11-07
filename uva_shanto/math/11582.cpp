@@ -41,27 +41,27 @@ int main()
 {
 
     v.clear();
-    v.assign(1002,-1);
+    v.assign(109,-1);
     //cout<<v[0];
     
-    for(ll i=0;i<=1002;i++)
+    for(ll i=0;i<=109;i++)
     {
         cycle[i].clear();
-        cycle[i].assign(1002,-1);
+        cycle[i].assign(109,-1);
     }
-    p=1000;
-    ll x = (fib(1000))%p;
+    p=6;
+    ll x = (fib(100))%p;
     
     v[1]=1;
     v[0]=0;
     cout<<endl;
 
     
-        for(ll j=0;j<=1000;j++)
+        for(ll j=0;j<=100;j++)
         cycle[6][j]=v[j];
     
 
-    for(ll i=0;i<=1000;i++)
+    for(ll i=0;i<=100;i++)
     {
         cout<<cycle[6][i]<<" ";
     }
