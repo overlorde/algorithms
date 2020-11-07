@@ -21,13 +21,10 @@ ll bigmod(ll a,ll b,ll M)
 
 ll fib(ll n)
 {
-    if(n == 0)
+    
+    if(n<=1)
     {
-        return 0;
-    }
-    if(n == 1 || n == 2)
-    {
-        return 1;
+        return n;
     }
 
     if(v[n]!=-1)
@@ -43,7 +40,7 @@ int main()
 {
 
     v.clear();
-    v.assign(101,-1);
+    v.assign(12,-1);
     //cout<<v[0];
     
     for(ll i=0;i<=100;i++)
@@ -53,9 +50,8 @@ int main()
     }
 
     ll x = fib(10);
-    v[0]=0;
+    
     v[1]=0;
-
     for(ll i=1;i<=10;i++)
     {
         cout<<v[i]<<" ";
