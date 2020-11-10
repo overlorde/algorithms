@@ -93,11 +93,11 @@ int main()
         FindArticulationPoint(1);
         cnt++;
         cout<<"Test case : "<<cnt<<endl;
+        cout<<"Printing Articulation Points:\n";
         for(auto n : articulation_point)
         {
             cout<<n<<" ";
         }
         cout<<"\n";
     }
-   
 }
