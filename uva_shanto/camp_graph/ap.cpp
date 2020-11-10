@@ -2,7 +2,7 @@
 using namespace std;
 #define ll long long
 
-vector<ll> adj[101];
+vector<ll> adj[1001],d,vis,low,parent;
 
 void build_graph()
 {
@@ -31,20 +31,27 @@ void build_graph()
 
 void init()
 {
+    time = 0;
+    articulation_point.clear();
+    articulation_point.assign(1001,-1);
+
     vis.clear();
     vis.assign(1001,0);
     
     low.clear();
-    low.assign(1001,-1);
+    low.assign(1001,0);
     
     d.clear();
-    d.assign(1001,-1);
+    d.assign(1001,0);
 
-    p.clear();
-    p.assign(1001,-1);
-
+    parent.clear();
+    parent.assign(1001,-1);
 }
 
+void FindArticulationPoint()
+{
+    time +=1;
+}
 
 int main()
 {
