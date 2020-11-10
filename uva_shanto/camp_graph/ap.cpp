@@ -76,8 +76,10 @@ void FindArticulationPoint(ll u)
 
             if(d[u] <= low[v] && u != 1) //not root find //we are doing it manually,need to find reason
             {
-                articulation_point[u] = 1;
+                if(articulation_point[u] !=1)
                 count_ap.push_back(u);
+            
+                articulation_point[u] = 1;
             }
             no_of_children +=1;
         }
@@ -85,8 +87,10 @@ void FindArticulationPoint(ll u)
         {
             if(articulation_point[u] !=1)
             count_ap.push_back(u);
+            
             articulation_point[u] = 1;
             
+
         }
     }
 }
