@@ -83,8 +83,10 @@ void FindArticulationPoint(ll u)
         }
         if(no_of_children > 1 && u == 1)
         {
-            articulation_point[u] = 1;
+            if(articulation_point[u] !=1)
             count_ap.push_back(u);
+            articulation_point[u] = 1;
+            
         }
     }
 }
