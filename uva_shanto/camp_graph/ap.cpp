@@ -10,7 +10,7 @@ void build_graph()
     {
         adj.clear();
     }
-    ll n;m;
+    ll n,m;
     cout<<"Number of Nodes : ";
     cin>>n;
     cout<<"'\n";
@@ -69,6 +69,16 @@ void FindArticulationPoint(u)
             parent[u] = v;
             FindArticulationPoint(v);
             low[u] = min(low[u],low[v]);
+
+            if(d[u] <= low[v]) //not root find //we are doing it manually,need to find reason
+            {
+                articulation_point[u] = 1;
+            }
+            no_of_children +=1;
+        }
+        if(no_of_children > 1 )
+        {
+            articulation_point[u] = 1;
         }
     }
 }
