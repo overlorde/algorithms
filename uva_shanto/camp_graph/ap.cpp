@@ -28,10 +28,21 @@ void build_graph()
     }
 
 }
-
-void test_adj_list()
+void test_graph()
 {
-    for(ll i=0;i<)
+    cout<<"test graph...";
+}
+void init()
+{
+    vis.clear();
+    vis.assign(1001,0);
+    
+    low.clear();
+    low.assign(1001,0);
+    
+    d.clear();
+    d.assign(1001,0);
+
 }
 int main()
 {
