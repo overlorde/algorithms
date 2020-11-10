@@ -4,7 +4,11 @@ using namespace std;
 
 vector<ll> adj[1001],d,vis,low,parent;
 vector<ll> articulation_point,count_ap;
+
+vector<pair<ll,ll>> bridges;
+
 ll t;
+
 void build_graph()
 {
     for(ll i=0;i<101;i++)
@@ -35,6 +39,8 @@ void init()
     t = 0;
 
     count_ap.clear();
+
+    bridges.clear();
 
     articulation_point.clear();
     articulation_point.assign(101,-1);
@@ -109,6 +115,11 @@ int main()
         for(auto n : count_ap)
         {
             cout<<n<<" ";
+        }
+        cout<<"\nPrinting Bridges : \n";
+        for(auto x : bridges)
+        {
+            cout<<x.first<<" "<<x.second<<endl;            
         }
         cout<<"\n";
     }
