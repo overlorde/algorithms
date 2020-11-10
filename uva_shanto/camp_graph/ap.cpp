@@ -3,12 +3,13 @@ using namespace std;
 #define ll long long
 
 vector<ll> adj[1001],d,vis,low,parent;
-
+vector<ll> articulation_point;
+ll t;
 void build_graph()
 {
     for(ll i=0;i<101;i++)
     {
-        adj.clear();
+        adj[i].clear();
     }
     ll n,m;
     cout<<"Number of Nodes : ";
@@ -31,9 +32,9 @@ void build_graph()
 
 void init()
 {
-    time = 0;
+    t = 0;
     articulation_point.clear();
-    articulation_point.assign(1001,-1);
+    articulation_point.assign(101,-1);
 
     vis.clear();
     vis.assign(1001,0);
@@ -48,10 +49,10 @@ void init()
     parent.assign(1001,-1);
 }
 
-void FindArticulationPoint(u)
+void FindArticulationPoint(ll u)
 {
-    time +=1;
-    low[u]=d[u]=time;
+    t +=1;
+    low[u]=d[u]=t;
     vis[u]=1;
     ll no_of_children = 0;
 
@@ -76,7 +77,7 @@ void FindArticulationPoint(u)
             }
             no_of_children +=1;
         }
-        if(no_of_children > 1 )
+        if(no_of_children > 1 && u == 1)
         {
             articulation_point[u] = 1;
         }
