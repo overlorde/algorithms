@@ -85,11 +85,19 @@ void FindArticulationPoint(u)
 
 int main()
 {
+    int cnt= 0;
     while(1)
     {
         init();
         build_graph();
         FindArticulationPoint(1);
+        cnt++;
+        cout<<"Test case : "<<cnt<<endl;
+        for(auto n : articulation_point)
+        {
+            cout<<n<<" ";
+        }
+        cout<<"\n";
     }
    
 }
