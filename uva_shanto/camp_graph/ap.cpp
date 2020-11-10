@@ -28,22 +28,24 @@ void build_graph()
     }
 
 }
-void test_graph()
-{
-    cout<<"test graph...";
-}
+
 void init()
 {
     vis.clear();
     vis.assign(1001,0);
     
     low.clear();
-    low.assign(1001,0);
+    low.assign(1001,-1);
     
     d.clear();
-    d.assign(1001,0);
+    d.assign(1001,-1);
+
+    p.clear();
+    p.assign(1001,-1);
 
 }
+
+
 int main()
 {
    
