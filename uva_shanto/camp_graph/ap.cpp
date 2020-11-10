@@ -52,6 +52,25 @@ void FindArticulationPoint(u)
 {
     time +=1;
     low[u]=d[u]=time;
+    vis[u]=1;
+    ll no_of_children = 0;
+
+    for(auto v : adj[u])
+    {
+        if(v == parent[u]) continue;
+
+        if(vis[v])
+        {
+            low[u] =  min(low[u],d[v]);
+        }
+
+        if(!vis[v])
+        {
+            parent[u] = v;
+            FindArticulationPoint(v);
+            low[u] = min(low[u],low[v]);
+        }
+    }
 }
 
 int main()
