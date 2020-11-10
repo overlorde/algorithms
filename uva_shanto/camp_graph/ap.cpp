@@ -48,9 +48,10 @@ void init()
     parent.assign(1001,-1);
 }
 
-void FindArticulationPoint()
+void FindArticulationPoint(u)
 {
     time +=1;
+    low[u]=d[u]=time;
 }
 
 int main()
