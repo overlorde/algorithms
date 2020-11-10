@@ -3,7 +3,7 @@ using namespace std;
 #define ll long long
 
 vector<ll> adj[1001],d,vis,low,parent;
-vector<ll> articulation_point;
+vector<ll> articulation_point,count_ap;
 ll t;
 void build_graph()
 {
@@ -33,6 +33,9 @@ void build_graph()
 void init()
 {
     t = 0;
+
+    count_ap.clear();
+
     articulation_point.clear();
     articulation_point.assign(101,-1);
 
@@ -74,12 +77,14 @@ void FindArticulationPoint(ll u)
             if(d[u] <= low[v] && u != 1) //not root find //we are doing it manually,need to find reason
             {
                 articulation_point[u] = 1;
+                count_ap.push_back(u);
             }
             no_of_children +=1;
         }
         if(no_of_children > 1 && u == 1)
         {
             articulation_point[u] = 1;
+            count_ap.push_back(u);
         }
     }
 }
@@ -95,7 +100,7 @@ int main()
         cnt++;
         cout<<"Test case : "<<cnt<<endl;
         cout<<"Printing Articulation Points:\n";
-        for(auto n : articulation_point)
+        for(auto n : count_ap)
         {
             cout<<n<<" ";
         }
