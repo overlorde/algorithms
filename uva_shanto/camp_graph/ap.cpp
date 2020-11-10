@@ -29,7 +29,11 @@ void build_graph()
 
 }
 
+void test_adj_list()
+{
+    for(ll i=0;i<)
+}
 int main()
 {
-    
+   
 }
