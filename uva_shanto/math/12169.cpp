@@ -43,8 +43,12 @@ int main()
     for(ll a = 0;a<100;a++)
     {
         ll x,y;
+         c = (x[3]-a*a*v[1]);
         ll g = egcd(a+1,10001,x,y);
         ll f =1;
+
+        x = x*(c/g);
+        
         for(ll i=2;i<=2*n;i+=1)
         {
             ll m = (a*(v[i-1]))+x +(y*10001);
