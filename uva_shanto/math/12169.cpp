@@ -37,17 +37,28 @@ int main()
     }
     
     ll T = n*2;
-    ll x2 = 0;
+    ll x3 = 0;
     for(ll a = 0;a<10001;a++)
     {
         ll x = 1,y = 1;
         ll g = egcd(a+1,10001,x,y);
 
-        for(ll i=2;i<=2*n;i+=2)
+        for(ll i=1;i<=2*n;i+=1)
         {
-            v[i] = (a*v[i-1]+x)%10001;
+            if(!i%2)
+            {
+                 v[i] = (a*v[i-1]+x)%10001;
+            }
+            else if(i%2){
+                x3 = (a*v[i-1]+x)%10001;
+                if(x3 != v[i])
+                {
+                    f = 0;
+                    break;
+                }
+            }
         }
-        break;   
+         
     }
 
     for(ll j = 2;j<=2*n;j+=2)
