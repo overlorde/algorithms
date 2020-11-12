@@ -49,4 +49,9 @@ int main()
             v[i]=x2;
         }   
     }
+
+    for(ll j = 1;j<=n;j+=2)
+    {
+
+    }
 }
