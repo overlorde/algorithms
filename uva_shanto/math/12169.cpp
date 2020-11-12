@@ -34,6 +34,7 @@ int main()
         ll x;
         cin>>x;
         v[i]=x;
+        //cout<<v[i]<<endl;
     }
     
     ll T = n*2;
@@ -46,14 +47,15 @@ int main()
         ll f =1;
         for(ll i=2;i<=2*n;i+=1)
         {
+            ll m = ((a*(v[i-1]))+x)%10001
             if(!i%2)
             {
-                 v[i] = (a*v[i-1])+x +(y*10001);
+                 v[i] = m;
             }
             else if(i%2){
-                x3 = (a*v[i-1])+x +(y*10001);
+                
                 //cout<<x3<<endl;
-                if(x3 != v[i])
+                if(m != v[i])
                 {
                     f = 0;
                     break;
