@@ -46,11 +46,12 @@ int main()
         ll c = (v[3]-a*a*v[1]);
         ll g = egcd(a+1,10001,x,y);
         ll f =1;
-
+        if (c % g) continue;
         x = x*(c/g);
 
         for(ll i=2;i<=2*n;i+=1)
         {
+            
             ll m = (((a*(v[i-1]))+x)%10001);
             if(!i%2)
             {
