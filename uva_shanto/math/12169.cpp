@@ -34,4 +34,12 @@ int main()
         cin>>x;
         v.push_back(x);
     }
+    ll T = n/2;
+    
+    for(ll a = 0;a<10001;a++)
+    {
+        ll x = 0,y = 0;
+        ll g = egcd(a+1,10001,&x,&y);
+
+    }
 }
