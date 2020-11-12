@@ -40,7 +40,7 @@ int main()
     ll x3 = 0;
     for(ll a = 0;a<10001;a++)
     {
-        ll x = 1,y = 1;
+        ll x = 0,y = 0;
         ll g = egcd(a+1,10001,x,y);
         ll f =1;
         for(ll i=2;i<=2*n;i+=1)

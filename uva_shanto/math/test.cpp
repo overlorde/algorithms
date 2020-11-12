@@ -26,5 +26,5 @@ ll egcd(ll a,ll b,ll &x,ll &y)
 
 int main()
 {
-
+  
 }
