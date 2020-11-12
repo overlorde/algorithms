@@ -10,7 +10,7 @@ ll egcd(ll a,ll b,ll &x,ll &y)
 {
     if(a==0)
     {
-        x = 0;y = 0;
+        x = 0;y = 1;
         return b;
     }
     ll x1,y1;
@@ -38,9 +38,10 @@ int main()
     
     ll T = n*2;
     ll x3 = 0;
+    ll x,y;
     for(ll a = 0;a<10001;a++)
     {
-        ll x = 0,y = 0;
+        
         ll g = egcd(a+1,10001,x,y);
         ll f =1;
         for(ll i=2;i<=2*n;i+=1)
