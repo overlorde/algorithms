@@ -28,8 +28,8 @@ int main()
     ll n;
     cin>>n;
     v.clear();
-    v.assign(101,-1);
-    for(ll i=0;i<2*n;i+=2)
+    v.assign(103,-1);
+    for(ll i=1;i<=2*n;i+=2)
     {
         ll x;
         cin>>x;
@@ -40,18 +40,20 @@ int main()
     ll x2 = 0;
     for(ll a = 0;a<10001;a++)
     {
-        ll x = 0,y = 0;
-        ll g = egcd(a+1,10001,&x,&y);
+        ll x = 1,y = 1;
+        ll g = egcd(a+1,10001,x,y);
 
-        for(ll i=1;i<2*T;i+=2)
+        for(ll i=2;i<=2*n;i+=2)
         {
-            x2 = (a*v[i]+x)%10001;
-            v[i]=x2;
-        }   
+            v[i] = (a*v[i-1]+x)%10001;
+        }
+        break;   
     }
 
-    for(ll j = 1;j<=n;j+=2)
+    for(ll j = 2;j<=2*n;j+=2)
     {
-
+        cout<<v[j]<<endl;
     }
+
+    return 0;
 }
