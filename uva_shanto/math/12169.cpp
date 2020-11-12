@@ -47,7 +47,7 @@ int main()
         ll g = egcd(a+1,10001,x,y);
         ll f =1;
         if (c % g) continue;
-        x = x*(c/g);
+        x = (x*c)/g;
 
         for(ll i=2;i<=2*n;i+=1)
         {
