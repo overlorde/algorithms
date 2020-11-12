@@ -42,8 +42,8 @@ int main()
     {
         ll x = 1,y = 1;
         ll g = egcd(a+1,10001,x,y);
-
-        for(ll i=1;i<=2*n;i+=1)
+        ll f =1;
+        for(ll i=2;i<=2*n;i+=1)
         {
             if(!i%2)
             {
@@ -51,6 +51,7 @@ int main()
             }
             else if(i%2){
                 x3 = (a*v[i-1]+x)%10001;
+                cout<<x3<<endl;
                 if(x3 != v[i])
                 {
                     f = 0;
@@ -58,12 +59,18 @@ int main()
                 }
             }
         }
+        if(f==0)
+        {
+            continue;
+        }else{
+            break;
+        }
          
     }
 
     for(ll j = 2;j<=2*n;j+=2)
     {
-        cout<<v[j]<<endl;
+        //cout<<v[j]<<endl;
     }
 
     return 0;
