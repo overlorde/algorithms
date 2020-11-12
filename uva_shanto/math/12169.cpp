@@ -40,7 +40,7 @@ int main()
     
     ll x3 = 0;
     
-    for(ll a = 0;a<1000;a++)
+    for(ll a = 0;a<10001;a++)
     {
         ll x,y;
         ll c = (v[3]-a*a*v[1]);
