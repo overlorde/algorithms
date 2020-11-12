@@ -40,7 +40,7 @@ int main()
     
     ll x3 = 0;
     
-    for(ll a = 0;a<10001;a++)
+    for(ll a = 0;a<100;a++)
     {
         ll x,y;
         ll g = egcd(a+1,10001,x,y);
@@ -57,18 +57,16 @@ int main()
                 //cout<<x3<<endl;
                 if(m != v[i])
                 {
-                    cout<<m<<endl;
+                    
                     f = 0;
                     break;
                 }
             }
         }
-        if(f==0)
-        {
-            continue;
-        }else{
-            break;
-        }
+        if(f==1)
+       {
+           break;
+       }
          
     }
 
