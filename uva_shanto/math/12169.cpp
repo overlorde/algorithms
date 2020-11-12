@@ -4,7 +4,7 @@ using namespace std;
 typedef long long ll;
 const int MAXD = 200+10, MOD = 10001;
 ll x[MAXD];
-lla ,k,b,d,c;
+ll a ,k,b,d,c;
 
 
 void egcd(ll a,ll b,ll &d,ll &x,ll &y)
@@ -26,7 +26,7 @@ int main()
     int T;
     cin>>T;
 
-    for(int i=1;i<2*T;i+=)
+    for(int i=1;i<2*T;i+=2)
     {
         cin>>x[i];
     }
