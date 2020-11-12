@@ -52,7 +52,7 @@ int main()
             }
             else if(i%2){
                 x3 = (a*v[i-1])+x +(y*10001);
-                cout<<x3<<endl;
+                //cout<<x3<<endl;
                 if(x3 != v[i])
                 {
                     f = 0;
@@ -71,7 +71,7 @@ int main()
 
     for(ll j = 2;j<=2*n;j+=2)
     {
-        //cout<<v[j]<<endl;
+        cout<<v[j]<<endl;
     }
 
     return 0;
