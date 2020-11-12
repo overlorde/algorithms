@@ -34,12 +34,23 @@ int main()
         cin>>x;
         v.push_back(x);
     }
-    ll T = n/2;
     
+    ll T = n/2;
+    ll x2 = 0;
     for(ll a = 0;a<10001;a++)
     {
         ll x = 0,y = 0;
         ll g = egcd(a+1,10001,&x,&y);
 
+        for(ll i=1;i<2*T;i++)
+        {
+            x2 = (a*v[i]+x);
+
+            if(x2 != v[i+1])
+            {
+                x2=0;
+                break;
+            }
+        }   
     }
 }
