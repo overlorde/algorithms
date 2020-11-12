@@ -7,8 +7,8 @@ ll egcd(ll a,ll b,ll &x,ll &y)
 {
   if(a==0)
   {
-    xd = 0;
-    y = 1;
+    x = 0;y= 0;
+    return b;
 
   }
 
@@ -20,8 +20,8 @@ ll egcd(ll a,ll b,ll &x,ll &y)
   y = x1;
 
   return d;
-
 }
+
 
 
 int main()
