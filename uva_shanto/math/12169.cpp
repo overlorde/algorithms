@@ -38,20 +38,20 @@ int main()
     
     ll T = n*2;
     ll x3 = 0;
-    ll x,y;
+    
     for(ll a = 0;a<10001;a++)
     {
-        
+        ll x,y;
         ll g = egcd(a+1,10001,x,y);
         ll f =1;
         for(ll i=2;i<=2*n;i+=1)
         {
             if(!i%2)
             {
-                 v[i] = (a*v[i-1]+x)%10001;
+                 v[i] = (a*v[i-1])+x +(y*10001);
             }
             else if(i%2){
-                x3 = (a*v[i-1]+x)%10001;
+                x3 = (a*v[i-1])+x +(y*10001);
                 cout<<x3<<endl;
                 if(x3 != v[i])
                 {
