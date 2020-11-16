@@ -40,5 +40,7 @@ void init()
     t = 0;
     count_ap.clear();
     bridges.clear();
+
+    articulation_point.clear();
 }
 
