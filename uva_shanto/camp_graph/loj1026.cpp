@@ -42,5 +42,14 @@ void init()
     bridges.clear();
 
     articulation_point.clear();
+    articulation_point.assign(101,-1);
+
+    vis.clear();
+    vis.assign(1001,0);
+
+    low.clear();
+    low.assign(1001,0);
+
+    
 }
 
