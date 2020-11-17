@@ -37,7 +37,7 @@ int f(int i,int j)
         return 0;
     }
     if(mem[i][j] != EMPTY_VALUE)
-    {
+    { 
         return mem[i][j];
     }
     int ans = INF;
