@@ -93,7 +93,7 @@ void FindArticulationPoint(ll u)
 int main()
 {
     cin>>t;
-
+    int cnt = 0;
     while(t--)
     {
         init();
@@ -104,7 +104,7 @@ int main()
 
         ll n;
         cin>>n;
-
+        //Input 
         for(ll i=0;i<n;i++)
         {
             ll p;
@@ -131,7 +131,7 @@ int main()
             }
 
         }
-        cout<<"Test case:::\n";
+        cout<<"Test case:::"<<++cnt<<"\n";
 
         for(auto y : bridges)
         {
