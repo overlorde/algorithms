@@ -6,9 +6,13 @@ using namespace std;
 vector<ll> edges[101],d,vis,low,parent;
 vector<ll> artuculation_point,count_ap;
 ll t;
+ll s; // source may change each time i call find arti point functiobn
+
 void init()
 {
     t = 0;
+
+    
     
     count_ap.clear();
 
@@ -29,6 +33,47 @@ void init()
     parent.clear();
     parent.assign(101,-1);
     
+}
+
+void findArticulationPoint(ll u)
+{
+    t += 1;
+    low[u]=d[u]=t;
+
+    vis[u]=1;
+
+    ll no_of_children = 0;
+
+    for(auto v : adj[u])
+    {
+        if(v == parent[u])
+        {
+            continue;
+        }
+
+        if(vis[v])
+        {
+            low[u] = min(low[u],d[v]);
+        }
+
+        if(!vis[v])
+        {
+            parent[u] = v;
+            findArticulationPoint(v);
+            low[u]=min(low[u],low[v]);
+
+            if(d[u]  <= low[v] && u != s)
+            {
+                if(articulation_point[u] != 1)
+                {
+                    count_ap.push_back(u);
+                }
+
+                articulation_point[u] = 1;
+            }
+            no_of_children = 1;
+        }
+    }
 }
 
 int main()
