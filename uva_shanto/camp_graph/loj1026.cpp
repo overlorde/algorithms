@@ -95,6 +95,7 @@ int main()
 
     while(t--)
     {
+        init();
         for(ll i=0;i<=100;i++)
         {
             edges[i].clear();
@@ -128,6 +129,12 @@ int main()
                 FindArticulationPoint(s);
             }
 
+        }
+        cout<<"Test case:::\n";
+
+        for(auto y : bridges)
+        {
+            cout<<y.first<<" "<<y.second<<endl;
         }
 
     }
