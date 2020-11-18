@@ -42,11 +42,10 @@ void findArticulationPoint(ll u)
 {
     t += 1;
     low[u]=d[u]=t;
-
     vis[u]=1;
-
     ll no_of_children = 0;
 
+    
     for(auto v : adj[u])
     {
         if(v == parent[u])
@@ -74,7 +73,7 @@ void findArticulationPoint(ll u)
 
                 articulation_point[u] = 1;
             }
-            no_of_children = 1;
+            no_of_children += 1;
         }
 
         if(no_of_children > 1 && u == s)
