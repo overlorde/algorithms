@@ -46,7 +46,7 @@ void FindArticulationPoint(ll u)
     ll no_of_children = 0;
 
     
-    for(auto v : adj[u])
+    for(auto v : edges[u])
     {
         if(v == parent[u])
         {
