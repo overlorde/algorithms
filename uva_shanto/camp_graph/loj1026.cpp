@@ -5,6 +5,9 @@ using namespace std;
 
 vector<ll> edges[101],d,vis,low,parent;
 vector<ll> artuculation_point,count_ap;
+
+vector<pair<ll,ll>> brdiges;
+
 ll t;
 ll s; // source may change each time i call find arti point functiobn
 
@@ -72,6 +75,17 @@ void findArticulationPoint(ll u)
                 articulation_point[u] = 1;
             }
             no_of_children = 1;
+        }
+
+        if(no_of_children > 1 && u == s)
+        {
+            if(articulation_point[u] != 1)
+            {
+                count_ap.push_back(u);
+            }
+
+            articulation_point[u] = 1;
+            bridges.push_back({u,v});
         }
     }
 }
