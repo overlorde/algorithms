@@ -125,7 +125,7 @@ int main()
             if(!vis[k])
             {
                 s = k;
-
+                FindArticulationPoint(s);
             }
 
         }
