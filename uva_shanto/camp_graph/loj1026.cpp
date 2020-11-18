@@ -72,6 +72,7 @@ void FindArticulationPoint(ll u)
                 }
 
                 articulation_point[u] = 1;
+                bridges.push_back({u,v});
             }
             no_of_children += 1;
         }
