@@ -25,7 +25,7 @@ void init()
     articulation_point.assign(101,-1);
 
     vis.clear();
-    vis.assign(101,-1);
+    vis.assign(101,0);
 
     low.clear();
     low.assign(101,0);
@@ -117,6 +117,17 @@ int main()
                 cin>>u;
                 edges[p].push_back(u);
             }
+
+        }
+        
+        for(ll k = 0;k<n;k++)
+        {
+            if(!vis[k])
+            {
+                s = k;
+
+            }
+
         }
 
     }
