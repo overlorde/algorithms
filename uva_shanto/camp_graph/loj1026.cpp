@@ -3,8 +3,9 @@ using namespace std;
 
 #define ll long long;
 
-vector<ll> edges[101];
-
+vector<ll> edges[101],d,vis,low,parent;
+vector<ll> artuculation_point,count_ap;
+ll t;
 void init()
 {
     t = 0;
@@ -19,13 +20,19 @@ void init()
     vis.clear();
     vis.assign(101,-1);
 
+    low.clear();
+    low.assign(101,0);
+
+    d.clear();
+    d.assign(101,0);
+
+    parent.clear();
+    parent.assign(101,-1);
     
 }
 
 int main()
 {
-    ll t;
-
     cin>>t;
 
     while(t--)
