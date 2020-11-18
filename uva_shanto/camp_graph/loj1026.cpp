@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long;
+#define ll long long
 
 vector<ll> edges[101],d,vis,low,parent;
-vector<ll> artuculation_point,count_ap;
+vector<ll> articulation_point,count_ap;
 
-vector<pair<ll,ll>> brdiges;
+vector<pair<ll,ll>> bridges;
 
 ll t;
 ll s; // source may change each time i call find arti point functiobn
