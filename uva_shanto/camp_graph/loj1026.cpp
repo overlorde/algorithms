@@ -38,7 +38,7 @@ void init()
     
 }
 
-void findArticulationPoint(ll u)
+void FindArticulationPoint(ll u)
 {
     t += 1;
     low[u]=d[u]=t;
@@ -61,7 +61,7 @@ void findArticulationPoint(ll u)
         if(!vis[v])
         {
             parent[u] = v;
-            findArticulationPoint(v);
+            FindArticulationPoint(v);
             low[u]=min(low[u],low[v]);
 
             if(d[u]  <= low[v] && u != s)
