@@ -84,8 +84,7 @@ void FindArticulationPoint(ll u)
             {
                 if(articulation_point[u] != 1){
                 count_ap.push_back(u);
-                cout<<"V : "<<v<<endl;
-                bridges.push_back({u,v});
+                //cout<<"V : "<<v<<endl;
                 }
                 articulation_point[u] = 1;
                
@@ -95,11 +94,12 @@ void FindArticulationPoint(ll u)
         if(no_of_children > 1 && u == 0)
         {
             if(articulation_point[u] !=1){
-            cout<<"V (2nd if condition): "<<v<<endl;
+            //cout<<"V (2nd if condition): "<<v<<endl;
             count_ap.push_back(u);
             }
             articulation_point[u] = 1;
-            bridges.push_back({u,v});
+            if(articulation_point[v]){
+            bridges.push_back({u,v});}
 
         }
     }
@@ -126,5 +126,10 @@ int main()
             cout<<x.first<<" "<<x.second<<endl;            
         }
         cout<<"\n";
+        cout<<"Debug array: \n";
+        for(auto x: articulation_point)
+        {
+            cout<<x<<endl;
+        }
     }
 }
