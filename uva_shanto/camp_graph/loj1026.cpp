@@ -40,52 +40,43 @@ void init()
 
 void FindArticulationPoint(ll u)
 {
-    t += 1;
+    t +=1;
     low[u]=d[u]=t;
     vis[u]=1;
     ll no_of_children = 0;
 
-    
     for(auto v : edges[u])
     {
-        if(v == parent[u])
-        {
-            continue;
-        }
+        if(v == parent[u]) continue;
 
         if(vis[v])
         {
-            low[u] = min(low[u],d[v]);
+            low[u] =  min(low[u],d[v]);
         }
 
         if(!vis[v])
         {
             parent[u] = v;
             FindArticulationPoint(v);
-            low[u]=min(low[u],low[v]);
+            low[u] = min(low[u],low[v]);
 
-            if(d[u]  <= low[v] && u != s)
+            if(d[u] <= low[v] && u != 1) //not root find //we are doing it manually,need to find reason
             {
                 if(articulation_point[u] != 1)
-                {
-                    count_ap.push_back(u);
-                }
-
-                articulation_point[u] = 1;
-               // bridges.push_back({u,v});
-            }
-            no_of_children += 1;
-        }
-
-        if(no_of_children > 1 && u == s)
-        {
-            if(articulation_point[u] != 1)
-            {
                 count_ap.push_back(u);
+            
+                articulation_point[u] = 1;
             }
-
+            no_of_children +=1;
+        }
+        if(no_of_children > 1 && u == 1)
+        {
+            if(articulation_point[u] !=1)
+            count_ap.push_back(u);
+            
             articulation_point[u] = 1;
             bridges.push_back({u,v});
+
         }
     }
 }
