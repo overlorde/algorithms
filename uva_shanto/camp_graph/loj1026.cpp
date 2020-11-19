@@ -86,11 +86,11 @@ void FindArticulationPoint(ll u)
                 count_ap.push_back(u);
             
                 articulation_point[u] = 1;
-                if(articulation_point[v]==1 || adj[v].size()==1)
-                {
+                //if(articulation_point[v]==1 || adj[v].size()==1)
+                //{
                     cout<<"u : "<<u<<" v : "<<v<<endl;
                     bridges.push_back({u,v});
-                }
+                //}
             }
             no_of_children +=1;
         }
