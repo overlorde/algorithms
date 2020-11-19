@@ -119,7 +119,7 @@ int main()
     {
         init();
         build_graph();
-        FindArticulationPoint(0);
+        FindArticulationPoint(1);
         cnt++;
         cout<<"Test case : "<<cnt<<endl;
         cout<<"Printing Articulation Points:\n";
