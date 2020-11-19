@@ -80,7 +80,7 @@ void FindArticulationPoint(ll u)
             FindArticulationPoint(v);
             low[u] = min(low[u],low[v]);
 
-            if(d[u] <= low[v] && u != 0) //not root find //we are doing it manually,need to find reason
+            if(d[u] <= low[v] /*&& u != 0*/) //not root find //we are doing it manually,need to find reason
             {
                 if(articulation_point[u] != 1)
                 count_ap.push_back(u);
@@ -94,7 +94,7 @@ void FindArticulationPoint(ll u)
             }
             no_of_children +=1;
         }
-        if(no_of_children > 1 && u == 0)
+        if(no_of_children > 1 /* && u == 0*/)
         {
             if(articulation_point[u] !=1)
             count_ap.push_back(u);
