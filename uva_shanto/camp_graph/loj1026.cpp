@@ -15,7 +15,7 @@ void build_graph()
     {
         adj[i].clear();
     }
-    ll n,m;
+    
     cout<<"Number of Nodes : ";
     cin>>n;
     cout<<"'\n";
@@ -120,13 +120,15 @@ int main()
         init();
         build_graph();
         
-
+        
         for(ll i = 0;i<n;i++)
         {
+            cout<<"baslal";
             if(vis[i] || adj[i].size() == 1)
             {
                 continue;
             }
+            cout<<"x"<<endl;
             FindArticulationPoint(i);
         }
         for(ll i = 0;i<n;i++)
