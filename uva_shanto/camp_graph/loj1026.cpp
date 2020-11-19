@@ -82,20 +82,31 @@ void FindArticulationPoint(ll u)
 
             if(d[u] <= low[v] && u != 1) //not root find //we are doing it manually,need to find reason
             {
-                if(articulation_point[u] != 1)
+                if(articulation_point[u] != 0)
                 count_ap.push_back(u);
             
                 articulation_point[u] = 1;
+                if(articulation_point[v]==1)
+                {
+                    cout<<"u : "<<u<<" v : "<<v<<endl;
+                    bridges.push_back({u,v});
+                }
             }
             no_of_children +=1;
         }
-        if(no_of_children > 1 && u == 1)
+        if(no_of_children > 1 && u == 0)
         {
             if(articulation_point[u] !=1)
             count_ap.push_back(u);
             
             articulation_point[u] = 1;
-            bridges.push_back({u,v});
+           
+
+             if(articulation_point[v]==1)
+                {
+                    cout<<"u : "<<u<<" v : "<<v<<endl;
+                    bridges.push_back({u,v});
+                }
 
         }
     }
@@ -108,7 +119,7 @@ int main()
     {
         init();
         build_graph();
-        FindArticulationPoint(1);
+        FindArticulationPoint(0);
         cnt++;
         cout<<"Test case : "<<cnt<<endl;
         cout<<"Printing Articulation Points:\n";
