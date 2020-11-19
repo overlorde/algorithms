@@ -8,7 +8,7 @@ vector<ll> articulation_point,count_ap;
 vector<pair<ll,ll>> bridges;
 
 ll t;
-ll n,m;
+ll n,m,s;
 void build_graph()
 {
     for(ll i=0;i<101;i++)
@@ -80,31 +80,31 @@ void FindArticulationPoint(ll u)
             FindArticulationPoint(v);
             low[u] = min(low[u],low[v]);
 
-            if(d[u] < low[v] /*&& u != 0*/) //not root find //we are doing it manually,need to find reason
+            if(d[u] <= low[v] && u != s) //not root find //we are doing it manually,need to find reason
             {
                 if(articulation_point[u] != 1)
-                    //count_ap.push_back(u);
+                    count_ap.push_back(u);
             
-                //articulation_point[u] = 1;
+                articulation_point[u] = 1;
                 //if(articulation_point[v]==1 || adj[v].size()==1)
                 //{
                     
                 //}
                 //if(d[u]<low[v])
                 //{
-                    bridges.push_back({u,v});
+                //    bridges.push_back({u,v});
                 //}
                 //cout<<"U1: "<<u<<" V1:"<<v<<endl;
                 //cout<<"V:"<<v<<endl;
             }
             no_of_children +=1;
         }
-        if(no_of_children > 1 /* && u == 0*/)
+        if(no_of_children > 1  && u == s)
         {
-            //if(articulation_point[u] !=1)
-            //count_ap.push_back(u);
+            if(articulation_point[u] !=1)
+            count_ap.push_back(u);
             
-            //articulation_point[u] = 1;
+            articulation_point[u] = 1;
             //if(d[u]<low[v])
             //{
                 bridges.push_back({u,v});
@@ -141,6 +141,7 @@ int main()
             {
                 continue;
             }
+            s=i;
             FindArticulationPoint(i);
         }         
         cnt++;
@@ -153,7 +154,7 @@ int main()
         cout<<"\nPrinting Bridges : \n";
         for(auto x : bridges)
         {
-            cout<<x.first<<" "<<x.second<<endl;            
+           // cout<<x.first<<" "<<x.second<<endl;            
         }
         cout<<"\n";/**/
         
