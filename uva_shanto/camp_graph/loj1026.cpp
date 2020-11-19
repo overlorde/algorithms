@@ -90,8 +90,8 @@ void FindArticulationPoint(ll u)
                 //{
                     
                 //}
-
-                cout<<"V:"<<v<<endl;
+                cout<<"U1: "<<u<<" V1:"<<v<<endl;
+                //cout<<"V:"<<v<<endl;
             }
             no_of_children +=1;
         }
@@ -102,7 +102,7 @@ void FindArticulationPoint(ll u)
             
             articulation_point[u] = 1;
            
-            cout<<"V:"<<v<<endl;
+            cout<<"U2: "<<u<<" V2:"<<v<<endl;
              //if(articulation_point[v]==1 || adj[v].size()==1)
                 //{
                 //}
@@ -122,7 +122,7 @@ int main()
         
         for(ll i = 0;i<n;i++)
         {
-            cout<<"baslal";
+            
             if(vis[i] || adj[i].size() == 1)
             {
                 continue;
@@ -139,7 +139,7 @@ int main()
             FindArticulationPoint(i);
         }         
         cnt++;
-        cout<<"Test case : "<<cnt<<endl;/**/
+        cout<<"Test case : "<<cnt<<endl;/*
         cout<<"Printing Articulation Points:\n";
         for(auto n : count_ap)
         {
@@ -152,6 +152,7 @@ int main()
         }
         cout<<"\n";/**/
         
+
 
     }
 }
