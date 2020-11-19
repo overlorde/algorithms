@@ -88,9 +88,10 @@ void FindArticulationPoint(ll u)
                 articulation_point[u] = 1;
                 //if(articulation_point[v]==1 || adj[v].size()==1)
                 //{
-                    cout<<"u : "<<u<<" v : "<<v<<endl;
-                    bridges.push_back({u,v});
+                    
                 //}
+
+                cout<<"V:"<<v<<endl;
             }
             no_of_children +=1;
         }
@@ -101,11 +102,9 @@ void FindArticulationPoint(ll u)
             
             articulation_point[u] = 1;
            
-
+            cout<<"V:"<<v<<endl;
              //if(articulation_point[v]==1 || adj[v].size()==1)
                 //{
-                    cout<<"u : "<<u<<" v : "<<v<<endl;
-                    bridges.push_back({u,v});
                 //}
 
         }
