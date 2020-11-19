@@ -8,7 +8,7 @@ vector<ll> articulation_point,count_ap;
 vector<pair<ll,ll>> bridges;
 
 ll t;
-
+ ll n,m;
 void build_graph()
 {
     for(ll i=0;i<101;i++)
@@ -120,6 +120,15 @@ int main()
         init();
         build_graph();
         FindArticulationPoint(1);
+
+        for(ll i = 0;i<n;i++)
+        {
+            if(vis[i] || adj[i].size() == 1)
+            {
+                continue;
+            }
+            FindArticulationPoint(i);
+        }        
         cnt++;
         cout<<"Test case : "<<cnt<<endl;
         cout<<"Printing Articulation Points:\n";
