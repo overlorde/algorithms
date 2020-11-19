@@ -18,7 +18,7 @@ void build_graph()
    // ll n,m;
     cout<<"Number of Nodes : ";
     cin>>n;
-    cout<<"'\n";
+    cout<<"\n";
     cout<<"Number of edges : ";
     cin>>m;
     cout<<"\n";
