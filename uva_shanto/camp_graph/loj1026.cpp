@@ -8,14 +8,14 @@ vector<ll> articulation_point,count_ap;
 vector<pair<ll,ll>> bridges;
 
 ll t;
-
+ll n,m;
 void build_graph()
 {
     for(ll i=0;i<101;i++)
     {
         adj[i].clear();
     }
-    ll n,m;
+   // ll n,m;
     cout<<"Number of Nodes : ";
     cin>>n;
     cout<<"'\n";
@@ -127,9 +127,9 @@ int main()
         }
         cout<<"\n";
         cout<<"Debug array: \n";
-        for(auto x: articulation_point)
+        for(ll k = 1;k <= n;k++)
         {
-            cout<<x<<endl;
+            cout<<"NODE:"<<k<<"STATS:"<<articulation_point[k]<<endl;
         }
     }
 }
