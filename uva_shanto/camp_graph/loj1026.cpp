@@ -90,6 +90,10 @@ void FindArticulationPoint(ll u)
                 //{
                     
                 //}
+                if(d[u]<low[v])
+                {
+                    bridge.push_back({u,v});
+                }
                 cout<<"U1: "<<u<<" V1:"<<v<<endl;
                 //cout<<"V:"<<v<<endl;
             }
@@ -103,9 +107,7 @@ void FindArticulationPoint(ll u)
             articulation_point[u] = 1;
            
             cout<<"U2: "<<u<<" V2:"<<v<<endl;
-             //if(articulation_point[v]==1 || adj[v].size()==1)
-                //{
-                //}
+            if()
 
         }
     }
