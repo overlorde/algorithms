@@ -143,8 +143,9 @@ int main()
                 continue;
             }
             s = i;
-            dfs(i);
+            
             FindArticulationPoint(i);
+             dfs(i);
         }
               
         cnt++;

@@ -89,9 +89,7 @@ void FindArticulationPoint(ll u)
             count_ap.push_back(u);
             
             articulation_point[u] = 1;
-            
-
-        }
+            }
     }
 }
 
