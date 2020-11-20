@@ -47,6 +47,9 @@ void init()
 
     vis.clear();
     vis.assign(1001,0);
+
+    vis2.clear();
+    vis2.assign(1001,0);
     
     low.clear();
     low.assign(1001,0);
@@ -99,9 +102,22 @@ void FindArticulationPoint(ll u)
            
             cout<<"U2: "<<u<<" V2:"<<v<<endl;
         }
-        if(d[u]<low[v])
+        if(d[u]<low[v] && u != s)
         {
             cout<<"x2"<<endl;
+            bridges.push_back({u,v});
+        }
+    }
+}
+
+void dfs(ll u)
+{
+    vis2[u] = 1;
+    for(auto x: adj[u])
+    {
+        if(!vis2[x])dfs(x);
+        if(d[u]<low[v])
+        {
             bridges.push_back({u,v});
         }
     }
@@ -124,6 +140,7 @@ int main()
                 continue;
             }
             s = i;
+            dfs(i);
             FindArticulationPoint(i);
         }
               
