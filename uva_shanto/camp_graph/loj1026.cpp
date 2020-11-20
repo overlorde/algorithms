@@ -67,7 +67,7 @@ void init()
 void FindBridge(ll u)
 {
     
-    low[u]=d[u]=t++;
+    low[u]=d[u]=++t;
     vis[u]=1;
     
 
@@ -107,7 +107,7 @@ int main()
         init();
         build_graph();
         
-        
+        /*
         for(ll i = 1;i<=n;i++)
         {
             
@@ -117,7 +117,8 @@ int main()
                 s = i;
             }   FindBridge(i);
         }
-        
+        */
+        FindBridge(1);
         cnt++;
         cout<<"Test case : "<<cnt<<endl;/**/
        /* cout<<"Printing Articulation Points:\n";
