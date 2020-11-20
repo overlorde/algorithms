@@ -86,14 +86,11 @@ void FindArticulationPoint(ll u)
             FindArticulationPoint(v);
             low[u] = min(low[u],low[v]);
 
-            if(d[u] <= low[v] && u != s) //not root find //we are doing it manually,need to find reason
+            if(d[u] < low[v]) //not root find //we are doing it manually,need to find reason
             {
-                bridges.push_back({u,v});
-                if(articulation_point[u] != 1)
-                    count_ap.push_back(u);
-            
-                articulation_point[u] = 1;
-              }
+               bridges.push_back({u,v});
+               
+            }
             no_of_children +=1;
         }
         if(no_of_children > 1  && u == s)
@@ -106,22 +103,14 @@ void FindArticulationPoint(ll u)
            
             cout<<"U2: "<<u<<" V2:"<<v<<endl;
         }
-
-    }
-}
-
-void dfs(ll u)
-{
-    vis2[u] = 1;
-    for(auto x: adj[u])
-    {
-        if(!vis2[x])dfs(x);
-        if(d[u]<low[x])
+        if(d[u]<low[v])
         {
-            bridges.push_back({u,x});
+            bridges.push_back({u,v});
         }
     }
 }
+
+
 
 int main()
 {
