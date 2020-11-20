@@ -55,10 +55,10 @@ void init()
     vis2.assign(1001,0);
     
     low.clear();
-    low.assign(1001,0);
+    low.assign(1001,-1);
     
     d.clear();
-    d.assign(1001,0);
+    d.assign(1001,-1);
 
     parent.clear();
     parent.assign(1001,-1);
@@ -66,8 +66,8 @@ void init()
 
 void FindBridge(ll u)
 {
-    t +=1;
-    low[u]=d[u]=t;
+    
+    low[u]=d[u]=t++;
     vis[u]=1;
     
 
@@ -88,6 +88,7 @@ void FindBridge(ll u)
 
             if(d[u] < low[v]) //not root find //we are doing it manually,need to find reason
             {
+                cout<<"inside"<<endl;
                bridges.push_back({u,v});
                
             }
@@ -111,7 +112,10 @@ int main()
         {
             
             if(!vis[i])
-                FindBridge(i);
+            {
+                cout<<"Daktesi"<<endl;
+
+            }    FindBridge(i);
         }
         
         cnt++;
