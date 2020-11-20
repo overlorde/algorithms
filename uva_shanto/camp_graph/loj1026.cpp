@@ -79,14 +79,13 @@ void FindBridge(ll u)
         {
             low[u] =  min(low[u],d[v]);
         }
+        else{
 
-        if(!vis[v])
-        {
             parent[u] = v;
             FindBridge(v);
             low[u] = min(low[u],low[v]);
 
-            if(d[u] < low[v] && u != s) //not root find //we are doing it manually,need to find reason
+            if(d[u] <= low[v] && u != s) //not root find //we are doing it manually,need to find reason
             {
                 cout<<"inside"<<endl;
                bridges.push_back({u,v});
@@ -121,11 +120,11 @@ int main()
         FindBridge(1);
         cnt++;
         cout<<"Test case : "<<cnt<<endl;/**/
-       /* cout<<"Printing Articulation Points:\n";
+        cout<<"Printing Articulation Points:\n";
         for(auto n : count_ap)
         {
             cout<<n<<" ";
-        }*/
+        }
         if(bridges.size())
         cout<<"\nPrinting Bridges : \n";
         for(auto x : bridges)
