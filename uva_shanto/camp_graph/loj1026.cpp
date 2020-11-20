@@ -21,7 +21,7 @@ void build_graph()
     
     cout<<"Number of Nodes : ";
     cin>>n;
-    cout<<"'\n";
+    cout<<"\n";
     cout<<"Number of edges : ";
     cin>>m;
     cout<<"\n";
@@ -86,7 +86,7 @@ void FindBridge(ll u)
             FindBridge(v);
             low[u] = min(low[u],low[v]);
 
-            if(d[u] < low[v]) //not root find //we are doing it manually,need to find reason
+            if(d[v] < low[u]) //not root find //we are doing it manually,need to find reason
             {
                 cout<<"inside"<<endl;
                bridges.push_back({u,v});
