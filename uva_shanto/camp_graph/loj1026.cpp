@@ -86,7 +86,7 @@ void FindBridge(ll u)
             FindBridge(v);
             low[u] = min(low[u],low[v]);
 
-            if(d[v] < low[u] && u != s) //not root find //we are doing it manually,need to find reason
+            if(d[u] < low[v] && u != s) //not root find //we are doing it manually,need to find reason
             {
                 cout<<"inside"<<endl;
                bridges.push_back({u,v});
@@ -126,6 +126,7 @@ int main()
         {
             cout<<n<<" ";
         }*/
+        if(bridges.size())
         cout<<"\nPrinting Bridges : \n";
         for(auto x : bridges)
         {
