@@ -128,11 +128,11 @@ int main()
         for(ll i = 0;i<n;i++)
         {
             
-            if(vis[i] || adj[i].size() == 1)
+            if(vis[i])
             {
                 continue;
             }
-            cout<<"x"<<endl;
+            s = i;
             FindArticulationPoint(i);
         }
         for(ll i = 0;i<n;i++)
