@@ -5,6 +5,9 @@ using namespace std;
 vector<ll> adj[1001],d,vis,low,parent;
 vector<ll> articulation_point,count_ap;
 
+//testing vis2 : purpose is to help in finding bridges
+vector<ll> vis2;
+
 vector<pair<ll,ll>> bridges;
 
 ll t;
@@ -116,9 +119,9 @@ void dfs(ll u)
     for(auto x: adj[u])
     {
         if(!vis2[x])dfs(x);
-        if(d[u]<low[v])
+        if(d[u]<low[x])
         {
-            bridges.push_back({u,v});
+            bridges.push_back({u,x});
         }
     }
 }
