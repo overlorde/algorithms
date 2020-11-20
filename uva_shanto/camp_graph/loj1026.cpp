@@ -86,7 +86,7 @@ void FindBridge(ll u)
             FindBridge(v);
             low[u] = min(low[u],low[v]);
 
-            if(d[v] < low[u]) //not root find //we are doing it manually,need to find reason
+            if(d[v] < low[u] && u != s) //not root find //we are doing it manually,need to find reason
             {
                 cout<<"inside"<<endl;
                bridges.push_back({u,v});
@@ -108,14 +108,14 @@ int main()
         build_graph();
         
         
-        for(ll i = 0;i<n;i++)
+        for(ll i = 1;i<=n;i++)
         {
             
             if(!vis[i])
             {
                 cout<<"Daktesi"<<endl;
-
-            }    FindBridge(i);
+                s = i;
+            }   FindBridge(i);
         }
         
         cnt++;
@@ -131,12 +131,10 @@ int main()
             cout<<x.first<<" "<<x.second<<endl;            
         }
         cout<<"\n";/**/
-        /*cout<<"Print d[u] ,low[u]\n";
-        for(ll i=0;i<n;i++)
+        cout<<"Print d[u] ,low[u]\n";
+        for(ll i=1;i<=n;i++)
         {
             cout<<"Node : "<<i<<" d[u] : "<<d[i]<<" low[u] : "<<low[i]<<" "<<endl;
-        }*/
-
-
+        }
     }
 }
