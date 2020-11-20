@@ -138,16 +138,16 @@ int main()
         for(ll i = 0;i<n;i++)
         {
             
-            if(vis[i])
+            if(vis[i] && adj[i].size() ==1)
             {
                 continue;
             }
             s = i;
             
             FindArticulationPoint(i);
-             dfs(i);
+            dfs(i);
         }
-              
+        
         cnt++;
         cout<<"Test case : "<<cnt<<endl;/**/
         cout<<"Printing Articulation Points:\n";
@@ -161,7 +161,11 @@ int main()
             cout<<x.first<<" "<<x.second<<endl;            
         }
         cout<<"\n";/**/
-        
+        cout<<"Print d[u] ,low[u]\n";
+        for(ll i=0;i<n;i++)
+        {
+            cout<<"Node : "<<i<<" d[u] : "<<d[i]<<" low[u] : "<<low[i]<<" "<<endl;
+        }
 
 
     }
