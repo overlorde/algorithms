@@ -86,16 +86,7 @@ void FindArticulationPoint(ll u)
                     count_ap.push_back(u);
             
                 articulation_point[u] = 1;
-                //if(articulation_point[v]==1 || adj[v].size()==1)
-                //{
-                    
-                //}
-                //if(d[u]<low[v])
-                //{
-                   bridges.push_back({u,v});
-                //}
-                //cout<<"U1: "<<u<<" V1:"<<v<<endl;
-                //cout<<"V:"<<v<<endl;
+              
             }
             no_of_children +=1;
         }
@@ -105,13 +96,13 @@ void FindArticulationPoint(ll u)
             count_ap.push_back(u);
             
             articulation_point[u] = 1;
-            //if(d[u]<low[v])
-            //{
-                bridges.push_back({u,v});
-            //}
+           
             cout<<"U2: "<<u<<" V2:"<<v<<endl;
-            
-
+        }
+        if(d[u]<low[v])
+        {
+            cout<<"x2"<<endl;
+            bridges.push_back({u,v});
         }
     }
 }
@@ -135,15 +126,7 @@ int main()
             s = i;
             FindArticulationPoint(i);
         }
-        for(ll i = 0;i<n;i++)
-        {
-            if(vis[i])
-            {
-                continue;
-            }
-            s=i;
-            FindArticulationPoint(i);
-        }         
+              
         cnt++;
         cout<<"Test case : "<<cnt<<endl;/**/
         cout<<"Printing Articulation Points:\n";
@@ -154,7 +137,7 @@ int main()
         cout<<"\nPrinting Bridges : \n";
         for(auto x : bridges)
         {
-           // cout<<x.first<<" "<<x.second<<endl;            
+            cout<<x.first<<" "<<x.second<<endl;            
         }
         cout<<"\n";/**/
         
