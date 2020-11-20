@@ -92,7 +92,7 @@ void FindArticulationPoint(ll u)
                 //}
                 //if(d[u]<low[v])
                 //{
-                //    bridges.push_back({u,v});
+                   bridges.push_back({u,v});
                 //}
                 //cout<<"U1: "<<u<<" V1:"<<v<<endl;
                 //cout<<"V:"<<v<<endl;
