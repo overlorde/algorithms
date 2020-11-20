@@ -64,12 +64,12 @@ void init()
     parent.assign(1001,-1);
 }
 
-void FindArticulationPoint(ll u)
+void FindBridge(ll u)
 {
     t +=1;
     low[u]=d[u]=t;
     vis[u]=1;
-    ll no_of_children = 0;
+    
 
     for(auto v : adj[u])
     {
@@ -83,7 +83,7 @@ void FindArticulationPoint(ll u)
         if(!vis[v])
         {
             parent[u] = v;
-            FindArticulationPoint(v);
+            FindBridge(v);
             low[u] = min(low[u],low[v]);
 
             if(d[u] < low[v]) //not root find //we are doing it manually,need to find reason
@@ -91,21 +91,7 @@ void FindArticulationPoint(ll u)
                bridges.push_back({u,v});
                
             }
-            no_of_children +=1;
-        }
-        if(no_of_children > 1  && u == s)
-        {
-            
-            if(articulation_point[u] !=1)
-            count_ap.push_back(u);
-            
-            articulation_point[u] = 1;
            
-            cout<<"U2: "<<u<<" V2:"<<v<<endl;
-        }
-        if(d[u]<low[v])
-        {
-            bridges.push_back({u,v});
         }
     }
 }
@@ -124,34 +110,28 @@ int main()
         for(ll i = 0;i<n;i++)
         {
             
-            if(vis[i] && adj[i].size() ==1)
-            {
-                continue;
-            }
-            s = i;
-            
-            FindArticulationPoint(i);
-            
+            if(!vis[i])
+                FindBridge(i);
         }
         
         cnt++;
         cout<<"Test case : "<<cnt<<endl;/**/
-        cout<<"Printing Articulation Points:\n";
+       /* cout<<"Printing Articulation Points:\n";
         for(auto n : count_ap)
         {
             cout<<n<<" ";
-        }
+        }*/
         cout<<"\nPrinting Bridges : \n";
         for(auto x : bridges)
         {
             cout<<x.first<<" "<<x.second<<endl;            
         }
         cout<<"\n";/**/
-        cout<<"Print d[u] ,low[u]\n";
+        /*cout<<"Print d[u] ,low[u]\n";
         for(ll i=0;i<n;i++)
         {
             cout<<"Node : "<<i<<" d[u] : "<<d[i]<<" low[u] : "<<low[i]<<" "<<endl;
-        }
+        }*/
 
 
     }
