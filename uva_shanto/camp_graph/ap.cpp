@@ -81,7 +81,7 @@ void FindArticulationPoint(ll u)
                 count_ap.push_back(u);
             
                 articulation_point[u] = 1;
-                cout<<"Inside First If : "<<" u :"<<u<<" v : "<<v<<" Finding out how things work"<<endl;
+                cout<<"Inside First If : "<<" u : "<<u<<" v : "<<v<<" Finding out how things work"<<endl;
             }
             no_of_children +=1;
         }
