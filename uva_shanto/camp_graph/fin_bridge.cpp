@@ -5,13 +5,14 @@ using namespace std;
 vector<ll> adj[1001],d,vis,low,parent;
 vector<ll> articulation_point,count_ap;
 ll t;
+ll n,m;
 void build_graph()
 {
     for(ll i=0;i<101;i++)
     {
         adj[i].clear();
     }
-    ll n,m;
+    //ll n,m;
     cout<<"Number of Nodes : ";
     cin>>n;
     cout<<"'\n";
@@ -35,7 +36,7 @@ void init()
     t = 0;
 
     count_ap.clear();
-
+    bridges.clear();
     articulation_point.clear();
     articulation_point.assign(101,-1);
 
@@ -51,7 +52,9 @@ void init()
     parent.clear();
     parent.assign(1001,-1);
 }
-
+//lets defy
+//lets defy
+//lets defy
 void FindArticulationPoint(ll u)
 {
     t +=1;
@@ -80,6 +83,7 @@ void FindArticulationPoint(ll u)
                 count_ap.push_back(u);
             
                 articulation_point[u] = 1;
+                cout<<"Inside First If : "<<" u : "<<u<<" v : "<<v<<" Finding out how things work"<<endl;
             }
             no_of_children +=1;
         }
@@ -89,6 +93,7 @@ void FindArticulationPoint(ll u)
             count_ap.push_back(u);
             
             articulation_point[u] = 1;
+            cout<<"Inside Second If : "<<"u : "<<u<<" v : "<<v<<" Number of Children : "<<no_of_children<<" ends"<<endl;
         }
     }
 }
@@ -109,5 +114,13 @@ int main()
             cout<<n<<" ";
         }
         cout<<"\n";
+
+        cout<<"Checking d and low"<<endl;
+
+        for(ll i=0;i<n;i++)
+        {
+            cout<<"Node "<<i<<" d : "<<d[i]<<" low : "<<low[i]<<endl;
+        }
+        
     }
 }
