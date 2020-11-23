@@ -4,11 +4,7 @@ using namespace std;
 
 vector<ll> adj[1001],d,vis,low,parent;
 vector<ll> articulation_point,count_ap;
-
-vector<pair<ll,ll>> bridges;
-
 ll t;
-
 void build_graph()
 {
     for(ll i=0;i<101;i++)
@@ -39,8 +35,6 @@ void init()
     t = 0;
 
     count_ap.clear();
-
-    bridges.clear();
 
     articulation_point.clear();
     articulation_point.assign(101,-1);
@@ -82,7 +76,7 @@ void FindArticulationPoint(ll u)
 
             if(d[u] <= low[v] && u != 1) //not root find //we are doing it manually,need to find reason
             {
-                if(articulation_point[u] != 1)
+                if(articulation_point[u] !=1)
                 count_ap.push_back(u);
             
                 articulation_point[u] = 1;
@@ -95,8 +89,6 @@ void FindArticulationPoint(ll u)
             count_ap.push_back(u);
             
             articulation_point[u] = 1;
-            bridges.push_back({u,v});
-
         }
     }
 }
@@ -115,11 +107,6 @@ int main()
         for(auto n : count_ap)
         {
             cout<<n<<" ";
-        }
-        cout<<"\nPrinting Bridges : \n";
-        for(auto x : bridges)
-        {
-            cout<<x.first<<" "<<x.second<<endl;            
         }
         cout<<"\n";
     }
