@@ -5,13 +5,14 @@ using namespace std;
 vector<ll> adj[1001],d,vis,low,parent;
 vector<ll> articulation_point,count_ap;
 ll t;
+ll n,m;
 void build_graph()
 {
     for(ll i=0;i<101;i++)
     {
         adj[i].clear();
     }
-    ll n,m;
+    //ll n,m;
     cout<<"Number of Nodes : ";
     cin>>n;
     cout<<"'\n";
@@ -109,5 +110,12 @@ int main()
             cout<<n<<" ";
         }
         cout<<"\n";
+
+        cout<<"Checking d and low"<<endl;
+
+        for(ll i=0;i<n;i++)
+        {
+            cout<<"Node "<<i<<" d : "<<d[i]<<" low : "<<low[i]<<endl;
+        }
     }
 }
