@@ -52,7 +52,9 @@ void init()
     parent.clear();
     parent.assign(1001,-1);
 }
-
+//lets defy
+//lets defy
+//lets defy
 void FindArticulationPoint(ll u)
 {
     t +=1;
