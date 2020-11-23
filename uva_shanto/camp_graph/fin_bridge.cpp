@@ -3,7 +3,7 @@ using namespace std;
 #define ll long long
 
 vector<ll> adj[1001],d,vis,low,parent;
-vector<ll> articulation_point,count_ap;
+vector<ll> articulation_point,count_ap,bridges;
 ll t;
 ll n,m;
 void build_graph()
