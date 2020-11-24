@@ -1,19 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-int main()
-{
-    int i;
-
-    cin>>i;
-
-    vector<int> v;
-    
-   // v.push_back(9);
-
-    if(!(!v.size()))
-    {
-        cout<<"NO/tables have turned bitch\n";
-    }
-    return 0;
-}
+ for(i = 0; i < l and bad; i++)
+                if(s[i] == s[l]) bad = false;
+            for(i = r+1; i < n and bad; i++)
+                if(s[i] == s[r]) bad = false;
