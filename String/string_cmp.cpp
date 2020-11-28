@@ -3,49 +3,41 @@ using namespace std;
 
 #define ll long long
 
-void solve()
-{
-    ll n;
-    cin>>n;
-    string s;
-    vector<char> t;
+vector<int> rabin_karp(string const& s, string const& t) {
+    const int p = 31; 
+    const int m = 1e9 + 9;
+    int S = s.size(), T = t.size();
 
-    cin>>s;
-    ll last = n-1;
-    for(ll i=0;i<n;i++)
-    {
-        t.push_back(s[i]);
-        last = t.size()-1;
-        ll f = 0;
-        if(i>=2)
-        {
-            string match = "fox";
-            ll k =2;
-            for(ll j=last;j>=j-2;j--,k--)
-            {
-                if(t[j]!=match[k])
-                {
-                    f = 1;
-                    break;
-                }
-                last = last-3;
-            }
-        }
-        
+    vector<long long> p_pow(max(S, T)); 
+    p_pow[0] = 1; 
+    for (int i = 1; i < (int)p_pow.size(); i++) 
+        p_pow[i] = (p_pow[i-1] * p) % m;
+
+    vector<long long> h(T + 1, 0); 
+    for (int i = 0; i < T; i++)
+        h[i+1] = (h[i] + (t[i] - 'a' + 1) * p_pow[i]) % m; 
+    long long h_s = 0; 
+    for (int i = 0; i < S; i++) 
+        h_s = (h_s + (s[i] - 'a' + 1) * p_pow[i]) % m; 
+
+    vector<int> occurences;
+    for (int i = 0; i + S - 1 < T; i++) { 
+        long long cur_h = (h[i+S] + m - h[i]) % m; 
+        if (cur_h == h_s * p_pow[i] % m)
+            occurences.push_back(i);
     }
-
+    return occurences;
 }
 
 int main()
 {
     string s,t;
     cin>>s;
-    cin>>t;
 
-    
+    t = "fox";
 
     vector<int> ans = rabin_karp(s,t);
 
-    cout<<"size >: "<<ans.size()<<endl;
+    cout<<"size >: "
 
 }
