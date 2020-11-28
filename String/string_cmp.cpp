@@ -33,11 +33,12 @@ int main()
 {
     string s,t;
     cin>>s;
-
-    t = "fox";
+    cin>>t;
+    
+    
 
     vector<int> ans = rabin_karp(s,t);
 
-    cout<<"size >: "<<s.szie()<<endl;
+    cout<<"size >: "<<ans.size()<<endl;
 
 }
