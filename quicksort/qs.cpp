@@ -23,10 +23,19 @@ int partition(int arr[],int low , int high)
         {
             return j;
         }
-        swap(arr[p],arr[j]);
+        swap(arr[p],arr[j]); 
+
     }
 
     
+}
+
+int partition_r(int arr[],int low,int high)
+{
+    srand(time(NULL));
+    int random = low + rand() % (high- low);
+    swap(arr[random],arr[low]);
+    return partition(arr,low , high);
 }
 
 int main()
