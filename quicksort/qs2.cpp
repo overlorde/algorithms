@@ -69,5 +69,22 @@ int partition_r(int arr[],int low , int high)
     return partition(arr,low,high);
 }
 
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param low 
+ * @param high 
+ */
+
+void quickSort(int arr[],int low,int high)
+{
+    if(low < high)
+    {
+        int pi = partition_r(arr,low , high);
+        quickSort(arr,low,pi);
+        quickSort(arr,pi+1,high);
+    }
+}
 
 
