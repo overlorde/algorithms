@@ -13,14 +13,18 @@
 using namespace std;
 
 #define ll long long
+
+
 /**
  * @brief 
- * 
+ * function : partion , it partitions the array 
+    there is a pivot and its from the left side and 
  * @param arr 
  * @param low 
  * @param high 
  * @return int 
  */
+
 int partition(int arr[],int low , int high)
 {
     int pivot = arr[low];
@@ -42,10 +46,7 @@ int partition(int arr[],int low , int high)
             return j;
         }
         swap(arr[p],arr[j]); 
-
     }
-
-    
 }
 /**
  * @brief 
