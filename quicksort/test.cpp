@@ -14,7 +14,8 @@ using namespace std;
 // and all greater elements to right
 int partition(int arr[], int low, int high)
 {
-    int pivot = arr[low];
+    int pivot = arr[low];//look in quicksort swap(arr[random],arr[low])
+    //this random is from the partition_r 
     int i = low - 1, j = high + 1;
  
     while (true) {
