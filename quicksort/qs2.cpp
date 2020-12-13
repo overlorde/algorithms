@@ -23,6 +23,10 @@
  int partition(int arr[],int low , int high)
  {
      int pivot = arr[low];
+     // the reason we taking low as pivot is because 
+     //in hoare partitioning system low is the way .
+     //in part_L we see the rand-th element is exchanged with low and pivot
+     //with low
      int i = low -1;
      int j =  high+1;
 
@@ -59,7 +63,7 @@ int partition_r(int arr[],int low , int high)
     srand(time(NULL));
     int random = low + rand()%(high-low);
 
-    swap(arr[random],arr[low]);
+    swap(arr[random],arr[low]);//we want pivot to become the lowest element 
 
 
     return partition(arr,low,high);
