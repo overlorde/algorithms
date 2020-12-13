@@ -38,6 +38,16 @@ int partition_r(int arr[],int low,int high)
     return partition(arr,low , high);
 }
 
+void quicksort(int arr[],int low , int high )
+{
+    if(low < high)
+    {
+        int pi = partition_r(arr,low,high);
+        quicksort(arr,low,pi);
+        quicksort(arr,pi+1,high);
+    }
+}
+
 void printArray(int array[],int n)
 {
     for(int i = 0,i<n,i++)
@@ -51,6 +61,8 @@ int main()
     int n =  sizeof(arr)/sizof(arr[0]);
 
     quicksort(arr,0,n-1);
-
+    printf("Sorted Array : \n");0
     printArray(arr,n);
+
+    return 0;
 }
