@@ -47,5 +47,10 @@ void printArray(int array[],int n)
 
 int main()
 {
+    int arr[] = {10,7,8,9,1,5};
+    int n =  sizeof(arr)/sizof(arr[0]);
 
+    quicksort(arr,0,n-1);
+
+    printArray(arr,n);
 }
