@@ -89,4 +89,21 @@ void quickSort(int arr[],int low,int high)
     }
 }
 
+void printArray(int arr[],int n)
+{
+    for(int i = 0;i < n;i++)
+        cout<<arr[i]<<" ";
+    cout<<"\n";
+}
 
+int main()
+{
+    int arr[] = {15,14,13,12,11,10,9,8,7,6,5,1};
+
+    int n = sizeof(arr)/sizeof(arr[0]);
+
+    quickSort(arr,0,n-1);
+    cout<<"sorted array ";
+
+    printArray(arr,n);
+}
