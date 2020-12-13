@@ -38,6 +38,13 @@ int partition_r(int arr[],int low,int high)
     return partition(arr,low , high);
 }
 
+void printArray(int array[],int n)
+{
+    for(int i = 0,i<n,i++)
+        cout<<arr[i]<<" ";
+    cout<<"\n";
+}
+
 int main()
 {
 
