@@ -2,6 +2,7 @@
  * @file qs2.cpp
  * @author your name (you@domain.com)
  * @brief 
+    here we call part_r to randomly find the pivot and we sort on basis of it
  * @version 0.1
  * @date 2020-12-13
  * 
@@ -71,7 +72,8 @@ int partition_r(int arr[],int low , int high)
 
 /**
  * @brief 
- * 
+ * recursive function to sort 
+    it finds pi from partition-r and then uses this to finds the pivot sorts it by swapping 
  * @param arr 
  * @param low 
  * @param high 
