@@ -15,6 +15,8 @@
  using namespace std;
 
  #define ll long long
+
+ vector<ll> v;
 /**
  * @brief 
  * basic partitioning and sort the sub array 
@@ -23,15 +25,15 @@
  * @param high 
  * @return int 
  */
- int partition(ll low , ll high)
+ ll partition(ll low , ll high)
  {
-     int pivot = v[low];
+     ll pivot = v[low];
      // the reason we taking low as pivot is because 
      //in hoare partitioning system low is the way .
      //in part_L we see the rand-th element is exchanged with low and pivot
      //with low
-     int i = low -1;
-     int j =  high+1;
+     ll i = low -1;
+     ll j =  high+1;
 
     while(true)
     {
@@ -60,10 +62,10 @@
  * @param high 
  * @return int 
  */
-int partition_r(ll low , ll high)
+ll partition_r(ll low , ll high)
 {
     srand(time(NULL));
-    int random = low + rand()%(high-low);
+    ll random = low + rand()%(high-low);
 
     swap(v[random],v[low]);//we want pivot to become the lowest element 
 
@@ -98,7 +100,7 @@ void printArray(vector<ll> arr,ll n)
         cout<<arr[i]<<" ";
     cout<<"\n";
 }
-
+/*
 int main()
 {
     int arr[] = {15,14,13,12,11,10,9,8,7,6,5,1};
@@ -114,14 +116,14 @@ int main()
 
     printArray(arr,n);
 }
-
+*/
 int main()
 {
-    ll t;
-    cin>>t;
-
-    while(t--){
-        ll n;
+    
+    ll n = 1;
+    while(n!=0){
+        v.clear();
+       
         cin>>n;
 
         for(ll i = 0;i<n;i++)
