@@ -31,8 +31,9 @@
      int i = low -1;
      int j =  high+1;
 
-    while(1)
+    while(true)
     {
+        cout<<"jjjj";
         while(arr[i]<pivot)
         {
             i++;
