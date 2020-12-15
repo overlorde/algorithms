@@ -114,6 +114,11 @@ int main()
 
         quickSort(0,n-1);
 
+        for(auto l : v)
+        {
+            cout<<l<<" ";
+        }
+        cout<<"\n";
         ans.push_back(v);
         
     }
