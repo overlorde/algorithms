@@ -94,32 +94,10 @@ void quickSort(ll low,ll high)
     }
 }
 
-void printArray(vector<ll> arr,ll n)
-{
-    for(ll i = 0;i < n;i++)
-        cout<<arr[i]<<" ";
-    //cout<<"\n";
-}
-/*
+
 int main()
 {
-    int arr[] = {15,14,13,12,11,10,9,8,7,6,5,1};
-
-    int n = sizeof(arr)/sizeof(arr[0]);
-    random_shuffle(arr,arr+n);
-    for(int i = 0;i<n;i++)
-    {
-        cout<<arr[i]<<" ";
-    }
-    quickSort(arr,0,n-1);
-    cout<<"sorted array ";
-
-    printArray(arr,n);
-}
-*/
-int main()
-{
-    
+    vector<vector<ll>> ans;
     ll n = 1;
     while(n!=0){
         v.clear();
@@ -135,6 +113,17 @@ int main()
         random_shuffle(v.begin(),v.end());
 
         quickSort(0,n-1);
-        printArray(v,n);
+
+        ans.push_back(v);
+        
+    }
+
+    for(auto b : ans)
+    {
+        for(auto q : b)
+        {
+            cout<<q<<" ";
+        }
+        cout<<"\n";
     }
 }
