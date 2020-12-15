@@ -33,15 +33,13 @@
 
     while(true)
     {
-        cout<<"jjjj";
-        while(arr[i]<pivot)
-        {
+        //cout<<"jjjj";
+          do {
             i++;
-        }
-        while(arr[i]>pivot)
-        {
+        } while (arr[i] < pivot);
+        do {
             j--;
-        }
+        } while (arr[j] > pivot);
         if(i>=j)
         {
             return j;
@@ -83,7 +81,7 @@ int partition_r(int arr[],int low , int high)
 void quickSort(int arr[],int low,int high)
 {
     //debug
-    cout<<"d";
+    //cout<<"d";
     if(low < high)
     {
         int pi = partition_r(arr,low , high);
@@ -104,7 +102,11 @@ int main()
     int arr[] = {15,14,13,12,11,10,9,8,7,6,5,1};
 
     int n = sizeof(arr)/sizeof(arr[0]);
-
+    random_shuffle(arr,arr+n);
+    for(int i = 0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
     quickSort(arr,0,n-1);
     cout<<"sorted array ";
 
