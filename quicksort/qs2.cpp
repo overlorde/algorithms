@@ -96,9 +96,9 @@ void quickSort(ll low,ll high)
 
 void printArray(vector<ll> arr,ll n)
 {
-    for(int i = 0;i < n;i++)
+    for(ll i = 0;i < n;i++)
         cout<<arr[i]<<" ";
-    cout<<"\n";
+    //cout<<"\n";
 }
 /*
 int main()
@@ -135,8 +135,6 @@ int main()
         random_shuffle(v.begin(),v.end());
 
         quickSort(0,n-1);
-
-
         printArray(v,n);
     }
 }
