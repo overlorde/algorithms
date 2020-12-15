@@ -81,6 +81,8 @@ int partition_r(int arr[],int low , int high)
 
 void quickSort(int arr[],int low,int high)
 {
+    //debug
+    cout<<"d";
     if(low < high)
     {
         int pi = partition_r(arr,low , high);
