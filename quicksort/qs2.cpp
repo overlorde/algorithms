@@ -58,15 +58,15 @@
  * @param high 
  * @return int 
  */
-int partition_r(int arr[],int low , int high)
+int partition_r(ll low , ll high)
 {
     srand(time(NULL));
     int random = low + rand()%(high-low);
 
-    swap(arr[random],arr[low]);//we want pivot to become the lowest element 
+    swap(v[random],v[low]);//we want pivot to become the lowest element 
 
 
-    return partition(arr,low,high);
+    return partition(low,high);
 }
 
 /**
@@ -78,19 +78,19 @@ int partition_r(int arr[],int low , int high)
  * @param high 
  */
 
-void quickSort(int arr[],int low,int high)
+void quickSort(ll low,ll high)
 {
     //debug
     //cout<<"d";
     if(low < high)
     {
         int pi = partition_r(arr,low , high);
-        quickSort(arr,low,pi);
-        quickSort(arr,pi+1,high);
+        quickSort(low,pi);
+        quickSort(pi+1,high);
     }
 }
 
-void printArray(int arr[],int n)
+void printArray(vector<ll> arr,ll n)
 {
     for(int i = 0;i < n;i++)
         cout<<arr[i]<<" ";
@@ -130,7 +130,7 @@ int main()
         }
         random_shuffle(v.begin(),v.end());
 
-        quickSort(v,0,n-1);
+        quickSort(0,n-1);
 
 
         printArray(v,n);
