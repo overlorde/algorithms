@@ -112,3 +112,27 @@ int main()
 
     printArray(arr,n);
 }
+
+int main()
+{
+    ll t;
+    cin>>t;
+
+    while(t--){
+        ll n;
+        cin>>n;
+
+        for(ll i = 0;i<n;i++)
+        {
+            ll x;
+            cin>>x;
+            v.push_back(x);
+        }
+        random_shuffle(v.begin(),v.end());
+
+        quickSort(v,0,n-1);
+
+
+        printArray(v,n);
+    }
+}
