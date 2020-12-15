@@ -1,3 +1,4 @@
+
 /**
  * @file qs.cpp
  * @author Farhan Saif (farhansaif488@gmail.com)
@@ -45,7 +46,7 @@ int partition(int arr[],int low , int high)
         {
             return j;
         }
-        swap(arr[p],arr[j]); 
+        swap(arr[i],arr[j]); 
     }
 }
 /**
@@ -85,9 +86,9 @@ void quicksort(int arr[],int low , int high )
  * @param array 
  * @param n 
  */
-void printArray(int array[],int n)
+void printArray(int arr[],int n)
 {
-    for(int i = 0,i<n,i++)
+    for(int i = 0;i<n;i++)
         cout<<arr[i]<<" ";
     cout<<"\n";
 }
@@ -99,10 +100,10 @@ void printArray(int array[],int n)
 int main()
 {
     int arr[] = {10,7,8,9,1,5};
-    int n =  sizeof(arr)/sizof(arr[0]);
+    int n =  sizeof(arr)/sizeof(arr[0]);
 
     quicksort(arr,0,n-1);
-    printf("Sorted Array : \n");0
+    printf("Sorted Array : \n");
     printArray(arr,n);
 
     return 0;
