@@ -98,12 +98,12 @@ void quickSort(ll low,ll high)
 int main()
 {
     vector<vector<ll>> ans;
-    ll n = 1;
-    while(n!=0){
+    ll n;
+    while(1){
         v.clear();
        
         cin>>n;
-
+        if(n==0)break;
         for(ll i = 0;i<n;i++)
         {
             ll x;
@@ -119,16 +119,16 @@ int main()
             cout<<l<<" ";
         }
         cout<<"\n";
-        ans.push_back(v);
+        //ans.push_back(v);
         
     }
 
-    for(auto b : ans)
+    /*for(auto b : ans)
     {
         for(auto q : b)
         {
             cout<<q<<" ";
         }
         cout<<"\n";
-    }
+    }*/
 }
