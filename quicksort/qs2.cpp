@@ -13,6 +13,8 @@
  #include <bits/stdc++.h>
 
  using namespace std;
+
+ #define ll long long
 /**
  * @brief 
  * basic partitioning and sort the sub array 
@@ -21,9 +23,9 @@
  * @param high 
  * @return int 
  */
- int partition(int arr[],int low , int high)
+ int partition(ll low , ll high)
  {
-     int pivot = arr[low];
+     int pivot = v[low];
      // the reason we taking low as pivot is because 
      //in hoare partitioning system low is the way .
      //in part_L we see the rand-th element is exchanged with low and pivot
@@ -36,15 +38,15 @@
         //cout<<"jjjj";
           do {
             i++;
-        } while (arr[i] < pivot);
+        } while (v[i] < pivot);
         do {
             j--;
-        } while (arr[j] > pivot);
+        } while (v[j] > pivot);
         if(i>=j)
         {
             return j;
         }
-        swap(arr[i],arr[j]);
+        swap(v[i],v[j]);
     }
  }
 
@@ -84,7 +86,7 @@ void quickSort(ll low,ll high)
     //cout<<"d";
     if(low < high)
     {
-        int pi = partition_r(arr,low , high);
+        int pi = partition_r(low , high);
         quickSort(low,pi);
         quickSort(pi+1,high);
     }
