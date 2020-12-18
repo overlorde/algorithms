@@ -99,11 +99,11 @@ int main()
 {
     vector<vector<ll>> ans;
     ll n;
-    while(1){
+    
         v.clear();
        
         cin>>n;
-        if(n==0)break;
+        
         for(ll i = 0;i<n;i++)
         {
             ll x;
@@ -121,7 +121,7 @@ int main()
         cout<<"\n";
         //ans.push_back(v);
         
-    }
+    
 
     /*for(auto b : ans)
     {
