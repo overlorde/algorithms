@@ -27,7 +27,7 @@ bool operator<(Node A,Node B)
 priority_queue<Node> PQ;
 int cost[100];
 int taken[100];
-//n 
+//n
 int n = 6;
 
 void push_node(int u,int v,int w)
